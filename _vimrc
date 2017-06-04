@@ -21,6 +21,7 @@ if 1
 	NeoBundle 'tomtom/tcomment_vim'
 	NeoBundle 'bronson/vim-trailing-whitespace'
 	NeoBundle 'nathanaelkane/vim-indent-guides'
+	NeoBundle 'tpope/vim-fugitive'
 
 	call neobundle#end()
 
@@ -41,6 +42,8 @@ if 1
 	set hlsearch
 	set background=dark
 	set hidden
+	set list
+	set listchars=tab:»-,trail:-,nbsp:%,eol:↲
 	set whichwrap=b,s,h,l,<,>,[,]
 	let g:indent_guides_start_level=2
 	highlight LineNr ctermfg=darkyellow
