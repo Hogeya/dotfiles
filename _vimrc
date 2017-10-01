@@ -34,3 +34,46 @@ nnoremap j gj
 nnoremap k gk
 
 syntax on
+
+""""""""""""""""
+" NEOBUNDLE
+"
+
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+	call neobundle#begin(expand('~/.vim/bundle/'))
+	NeoBundleFetch 'Shougo/neobundle.vim'
+	NeoBundle 'itchyny/lightline.vim'
+	NeoBundle 'scrooloose/nerdtree'
+	NeoBundle 'tpope/vim-fugitive'
+	call neobundle#end()
+endif
+
+""""""""""""""""""
+" lightlineの設定
+"
+
+if !has('gui_running')
+	set t_Co=256
+endif
+
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\	'left': [ [ 'mode', 'paste'],
+	\			  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\	'gitbranch': 'fugitive#head'
+	\ },
+	\ }
+
+"""""""""""""""""""
+" NERDTREEの設定
+"
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
+
+filetype plugin indent on
