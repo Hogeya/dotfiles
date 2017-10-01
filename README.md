@@ -1,2 +1,2 @@
-# vimrc
-my vimrc is now developing
+# DOTFILES
+Manage dotfiles Repository
