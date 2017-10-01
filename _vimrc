@@ -35,7 +35,7 @@ nnoremap k gk
 
 syntax on
 
-colorscheme molokai
+colorscheme hybrid
 
 """"""""""""""""
 " NEOBUNDLE
