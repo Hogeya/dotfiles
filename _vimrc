@@ -35,6 +35,8 @@ nnoremap k gk
 
 syntax on
 
+colorscheme molokai
+
 """"""""""""""""
 " NEOBUNDLE
 "
@@ -46,6 +48,7 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
+	NeoBundle 'Shougo/neocomplcache'
 	NeoBundle 'itchyny/lightline.vim'
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'tpope/vim-fugitive'
@@ -74,6 +77,34 @@ let g:lightline = {
 """""""""""""""""""
 " NERDTREEの設定
 "
+
+" Ctr + r でTreeを開けるようにする
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
+
+"""""""""""""""""""
+" NEOCOMOLCACHEの設定
+"
+
+" AcpComplpopを無効化
+let g:acp_enableAtStartup = 0
+" 起動時にneocomplcacheを有効
+let g:neocomplcache_enable_at_startup = 1
+" 大文字が入力されるまで大文字小文字の区別を無視
+let g:neocomplcache_enable_smart_case = 1
+" _区切りの補完を有効
+let g:neocomplcache_enable_underbar_completion = 1
+" 3文字からシンタックスをキャッシュする
+let g:neocomplcache_min_syntax_length = 3
+" KeyWordパターンを設定
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 filetype plugin indent on
