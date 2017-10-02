@@ -88,3 +88,5 @@ setopt share_history
 #
 
 alias ll='ls -l'
+alias ssh='ssh -F ~/.ssh/config'
+alias scp='scp -F ~/.ssh/config'
