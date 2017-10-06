@@ -49,6 +49,7 @@ if has('vim_starting')
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	NeoBundle 'Shougo/neocomplcache'
+	NeoBundle 'airblade/vim-gitgutter'
 	NeoBundle 'itchyny/lightline.vim'
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'tpope/vim-fugitive'
@@ -106,5 +107,12 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+""""""""""""""""""""
+" vim-gitgutterの設定
+"
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=brown
 
 filetype plugin indent on
