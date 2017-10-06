@@ -1,0 +1,14 @@
+# panel選択
+select-pane -t 0
+
+# 左右に分割
+split-window -h
+
+# panel選択
+select-pane -t 1
+
+# 上下に分割
+split-pane -v
+
+# メーンのパネルの幅を大きくする
+setw main-pane-width 100
