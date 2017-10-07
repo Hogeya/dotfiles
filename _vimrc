@@ -33,6 +33,9 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
+" 英字キーボードに合わせてコロンとセミコロンを入れ替える
+noremap ; :
+
 syntax on
 
 colorscheme molokai
