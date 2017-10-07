@@ -39,6 +39,10 @@ nnoremap k gk
 " 英字キーボードに合わせてコロンとセミコロンを入れ替える
 noremap ; :
 
+" タブ移動
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+
 syntax on
 
 colorscheme molokai
@@ -57,6 +61,7 @@ if has('vim_starting')
 	NeoBundle 'Shougo/neocomplcache'
 	NeoBundle 'airblade/vim-gitgutter'
 	NeoBundle 'itchyny/lightline.vim'
+	NeoBundle 'miyakogi/seiya.vim'
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'tpope/vim-fugitive'
 	call neobundle#end()
@@ -135,3 +140,8 @@ highlight GitGutterAdd ctermfg=blue ctermbg=brown
 set updatetime=250
 
 filetype plugin indent on
+
+"""""""""""""""""""
+" Seiyaの設定
+"
+let g:seiya_auto_enable = 1
