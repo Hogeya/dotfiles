@@ -57,6 +57,7 @@ if has('vim_starting')
 	NeoBundle 'Shougo/neocomplcache'
 	NeoBundle 'airblade/vim-gitgutter'
 	NeoBundle 'itchyny/lightline.vim'
+	NeoBundle 'miyakogi/seiya.vim'
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'tpope/vim-fugitive'
 	call neobundle#end()
@@ -135,3 +136,8 @@ highlight GitGutterAdd ctermfg=blue ctermbg=brown
 set updatetime=250
 
 filetype plugin indent on
+
+"""""""""""""""""""
+" Seiyaの設定
+"
+let g:seiya_auto_enable = 1
