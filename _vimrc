@@ -39,6 +39,10 @@ nnoremap k gk
 " 英字キーボードに合わせてコロンとセミコロンを入れ替える
 noremap ; :
 
+" タブ移動
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+
 syntax on
 
 colorscheme molokai
