@@ -100,7 +100,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeWinSize = 20
 
 """""""""""""""""""
-" NEOCOMOLCACHEの設定
+" NEOCOMPLCACHEの設定
 "
 
 " AcpComplpopを無効化
