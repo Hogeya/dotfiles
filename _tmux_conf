@@ -1,0 +1,59 @@
+# pane表示時間を伸ばす
+set-option -g display-panes-time 10000
+
+# mouse設定有効
+set-option -g mouse on
+
+# | で縦分割
+bind | split-window -h
+
+# - で横分割
+bind - split-window -v
+
+# ペインのインデックスを1スタート
+set-option -g base-index 1
+
+# 最大行数
+set-option -g history-limit 5000
+
+# 設定ファイルのリロード
+bind r source-file ~/.tmux.conf \; display "RELOADED!"
+
+# 256色端末を使用する
+set-option -g default-terminal "screen-256color"
+
+# ステータスバーの設定
+set-option -g status-fg black
+set-option -g status-bg white
+set-option -g status-attr bright
+
+# windowの色設定
+set-window-option -g window-status-fg black
+set-window-option -g window-status-bg white
+set-window-option -g window-status-attr bright
+
+# アクティブWindowを目立たせる
+set-window-option -g window-status-current-fg black
+set-window-option -g window-status-current-bg white
+set-window-option -g window-status-current-attr bright
+
+# ペインボーダーの色設定
+set-option -g pane-border-bg black
+set-option -g pane-active-border-fg white
+set-option -g pane-active-border-fg white
+
+# コマンドラインの色設定
+set-option -g message-fg black
+set-option -g message-bg white
+set-option -g message-attr bright
+
+# ステータスバー
+set-option -g status-left-length 90
+set-option -g status-right-length 90
+set-option -g status-left "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P"
+set-option -g status-right "#(wifi) #(battery --tmux) #[fg=white][%Y-%m-%d %H:%M]"
+set-option -g status-interval 1
+set-option -g status-justify centre
+set-window-option -g monitor-activity on
+set-option -g visual-activity on
+set-option -g status-position top
