@@ -4,6 +4,7 @@ set autowrite
 set backspace=indent,eol,start
 set cursorcolumn
 set cursorline
+set encoding=utf8
 set fenc=utf-8
 set fileencoding=utf-8
 set fileformat=unix
