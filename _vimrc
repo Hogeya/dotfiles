@@ -2,6 +2,8 @@ set autoindent
 set autoread
 set autowrite
 set backspace=indent,eol,start
+set cursorcolumn
+set cursorline
 set fenc=utf-8
 set fileencoding=utf-8
 set fileformat=unix
@@ -26,8 +28,8 @@ set statusline=%<%F\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 set tabstop=4
 set title
 set whichwrap=b,s,[,],<,>
-set wrapscan
 set wildmode=list:longest
+set wrapscan
 
 " 折り返し時に表示行単位での移動をできるようにする
 nnoremap j gj
