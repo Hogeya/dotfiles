@@ -7,5 +7,8 @@ split-window -h
 # panel選択
 select-pane -t 1
 
+# パネルの幅を指定
+resize-pane -R -t 1 15
+
 # 上下に分割
 split-pane -v
