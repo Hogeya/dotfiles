@@ -87,8 +87,8 @@ let g:lightline = {
 " Ctr + r でTreeを開けるようにする
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
 
-" 隠しファイルを表示させる
-let NERDTreeShowHidden = 1
+" NerdTreeの幅設定
+let NERDTreeWinSize = 20
 
 """""""""""""""""""
 " NEOCOMOLCACHEの設定
