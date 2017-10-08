@@ -1,3 +1,5 @@
+" Author: Takatsugu Yoneya
+
 set autoindent
 set autoread
 set autowrite
@@ -43,9 +45,11 @@ noremap ; :
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
+
 syntax on
 
-colorscheme molokai
+colorscheme hybrid
 
 """"""""""""""""
 " NEOBUNDLE
@@ -64,6 +68,7 @@ if has('vim_starting')
 	NeoBundle 'miyakogi/seiya.vim'
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'tpope/vim-fugitive'
+	NeoBundle 'twitvim/twitvim'
 	call neobundle#end()
 endif
 
@@ -145,3 +150,16 @@ filetype plugin indent on
 " Seiyaの設定
 "
 let g:seiya_auto_enable = 1
+
+"""""""""""""""""""
+" twitvimの設定
+"
+
+" twitvimを有効にする
+let g:twit_vim_enable_python = 1
+let twitvim_count = 40
+
+nnoremap ,tl :<C-u>SetLoginTwitter<CR>
+nnoremap ,tp :<C-u>PosttoTwitter<CR>
+nnoremap ,tf :<C-u>FriendsTwitter<CR>
+nnoremap ,tn :<C-u>NextTwitter<CR>
