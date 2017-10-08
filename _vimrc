@@ -45,6 +45,8 @@ noremap ; :
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
+
 syntax on
 
 colorscheme hybrid
