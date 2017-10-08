@@ -1,34 +1,38 @@
 # 2017-10-07
 # Please start up with zsh
 
-echo vimのライブラリを作成開始します
+echo Start make vim libraly
 
+home=$HOME
 # .vimディレクトリをカレントに作成
-cd $HOME
+cd $home
 mkdir .vim
 cd .vim
 mkdir bundle
 mkdir colors
 
+Github="https://github.com"
 # vimで使用するライブラリの確保
 cd bundle
-git clone https://github.com/Shougo/neobundle.vim
-git clone https://github.com/Shougo/neocomplcache
-git clone https://github.com/airblade/vim-gitgutter
-git clone https://github.com/itchyny/lightline.vim
-git clone https://github.com/miyakogi/seiya.vim
-git clone https://github.com/scrooloose/nerdtree
-git clone https://github.com/tpope/vim-fugitive
+git clone "$Github/Shougo/neobundle.vim"
+git clone "$Github/Shougo/neocomplcache"
+git clone "$Github/airblade/vim-gitgutter"
+git clone "$Github/itchyny/lightline.vim"
+git clone "$Github/miyakogi/seiya.vim"
+git clone "$Github/scrooloose/nerdtree"
+git clone "$Github/tpope/vim-fugitive"
 cd ../
-cd colors # colors
-git clone https://github.com/tomasr/molokai
+cd colors
+git clone "$Github/tomasr/molokai"
 
-echo vimのライブラリの作成を完了しました
+echo DONE!!
+echo Start make Symlinks at HOME
 
 # シムリンクを作成する
-$HOME/dotfiles
+cd $HOME/dotfiles
 ln -sf $HOME/.vimrc _vimrc
 ln -sf $HOME/.zshrc _zshrc
 ln -sf $HOME/.tmux.conf _tmux_conf
 ln -sf $HOME/.zprofile _zprofile
 
+echo DONE!!
