@@ -1,3 +1,5 @@
+" Author: Takatsugu Yoneya
+
 set autoindent
 set autoread
 set autowrite
@@ -45,7 +47,7 @@ nnoremap <C-p> gT
 
 syntax on
 
-colorscheme molokai
+colorscheme hybrid
 
 """"""""""""""""
 " NEOBUNDLE
