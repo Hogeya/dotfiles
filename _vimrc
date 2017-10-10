@@ -169,7 +169,7 @@ nnoremap ,tn :<C-u>NextTwitter<CR>
 "
 
 " 入力モードでスタートさせる
-let g:unite enable_start_insert=1
+let g:unite_enable_start_insert=1
 
 " バッファ一覧
 noremap ,ub :Unite buffer<CR>
