@@ -7,9 +7,8 @@ set backspace=indent,eol,start
 set cursorcolumn
 set cursorline
 set encoding=utf8
-set fenc=utf-8
-set fileencoding=utf-8
-set fileformat=unix
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
 set hidden
 set hlsearch
 set ignorecase
@@ -49,7 +48,7 @@ nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
 
-colorscheme hybrid
+colorscheme molokai
 
 """"""""""""""""
 " NEOBUNDLE
