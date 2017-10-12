@@ -23,6 +23,7 @@ git clone "$Github/itchyny/lightline.vim"
 git clone "$Github/miyakogi/seiya.vim"
 git clone "$Github/scrooloose/nerdtree"
 git clone "$Github/tpope/vim-fugitive"
+git clone "$Github/twitvim/twitvim"
 cd ../
 cd colors
 git clone "$Github/tomasr/molokai"
