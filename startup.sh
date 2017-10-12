@@ -26,8 +26,11 @@ git clone "$Github/tpope/vim-fugitive"
 cd ../
 cd colors
 git clone "$Github/tomasr/molokai"
+git clone "$Github/w0ng/vim-hybrid"
 mv molokai/colors/molokai.vim molokai.vim
+mv vim-hybrid/colors/hybrid.vim hybrid.vim
 rm -rf molokai
+rm -rf vim-hybrid
 
 echo DONE!!
 echo Start make Symlinks at HOME
