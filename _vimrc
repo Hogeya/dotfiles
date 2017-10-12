@@ -7,9 +7,8 @@ set backspace=indent,eol,start
 set cursorcolumn
 set cursorline
 set encoding=utf8
-set fenc=utf-8
-set fileencoding=utf-8
-set fileformat=unix
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
 set hidden
 set hlsearch
 set ignorecase
@@ -49,7 +48,7 @@ nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
 
-colorscheme hybrid
+colorscheme molokai
 
 """"""""""""""""
 " NEOBUNDLE
@@ -63,6 +62,7 @@ if has('vim_starting')
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	NeoBundle 'Shougo/neocomplcache'
+	NeoBundle 'Shougo/unite.vim'
 	NeoBundle 'airblade/vim-gitgutter'
 	NeoBundle 'itchyny/lightline.vim'
 	NeoBundle 'miyakogi/seiya.vim'
@@ -163,3 +163,29 @@ nnoremap ,tl :<C-u>SetLoginTwitter<CR>
 nnoremap ,tp :<C-u>PosttoTwitter<CR>
 nnoremap ,tf :<C-u>FriendsTwitter<CR>
 nnoremap ,tn :<C-u>NextTwitter<CR>
+
+""""""""""""""""""
+" Unite.vim の設定
+"
+
+" 入力モードでスタートさせる
+let g:unite_enable_start_insert=1
+
+" バッファ一覧
+noremap ,ub :Unite buffer<CR>
+" ファイル一覧
+noremap ,uf :Unite -buffer-name=file file<CR>
+" 最近使ったファイル一覧
+noremap ,ur :Unite file_mru<CR>
+" sourceを今見ているディレクトリ以下にする
+noremap ,ucd :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+
+" ウィンドウを分割して開く
+au Filetype unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+au Filetype unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+
+" esc2回押しで終了
+au filetype unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+
