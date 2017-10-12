@@ -18,6 +18,7 @@ Github="https://github.com"
 cd bundle
 git clone "$Github/Shougo/neobundle.vim"
 git clone "$Github/Shougo/neocomplcache"
+git clone "$Giyhub/Shougo/unite.vim"
 git clone "$Github/airblade/vim-gitgutter"
 git clone "$Github/itchyny/lightline.vim"
 git clone "$Github/miyakogi/seiya.vim"
