@@ -47,16 +47,15 @@ nnoremap <C-p> gT
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
-if has('mac')
-	colorscheme hybrid
-endif
+
+colorscheme hybrid
 
 if has('win64')
 	colorscheme molokai
 endif
 
 """"""""""""""""
-" NEOBUNDLE
+" DEIN
 "
 if &compatible
 	set nocompatible
@@ -70,6 +69,7 @@ call dein#add('Shougo/neocomplcache.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/lightline.vim')
+call dein#add('miyakogi/seiya.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
 call dein#add('twitvim/twitvim')
