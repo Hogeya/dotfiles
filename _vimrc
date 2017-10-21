@@ -47,8 +47,13 @@ nnoremap <C-p> gT
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
+if has('mac')
+	colorscheme hybrid
+endif
 
-colorscheme molokai
+if has('win64')
+	colorscheme molokai
+endif
 
 """"""""""""""""
 " NEOBUNDLE
