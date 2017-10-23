@@ -47,34 +47,36 @@ nnoremap <C-p> gT
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
-if has('mac')
-	colorscheme hybrid
-endif
+
+colorscheme hybrid
 
 if has('win64')
 	colorscheme molokai
 endif
 
 """"""""""""""""
-" NEOBUNDLE
+" DEIN
 "
-
-set nocompatible
+if &compatible
+	set nocompatible
+endif
 filetype plugin indent off
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-	call neobundle#begin(expand('~/.vim/bundle/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	NeoBundle 'Shougo/neocomplcache'
-	NeoBundle 'Shougo/unite.vim'
-	NeoBundle 'airblade/vim-gitgutter'
-	NeoBundle 'itchyny/lightline.vim'
-	NeoBundle 'miyakogi/seiya.vim'
-	NeoBundle 'scrooloose/nerdtree'
-	NeoBundle 'tpope/vim-fugitive'
-	NeoBundle 'twitvim/twitvim'
-	call neobundle#end()
+set runtimepath+=~/.vim/dein/dein.vim
+call dein#begin(expand('~/.vim/dein'))
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neocomplcache.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('itchyny/lightline.vim')
+call dein#add('miyakogi/seiya.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('tpope/vim-fugitive')
+call dein#add('twitvim/twitvim')
+call dein#end()
+
+if dein#check_install()
+	call dein#install()
 endif
 
 """"""""""""""""""
@@ -192,5 +194,4 @@ au Filetype unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split
 " esc2回押しで終了
 au filetype unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
 
