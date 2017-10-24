@@ -48,11 +48,7 @@ nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 
 syntax on
 
-colorscheme hybrid
-
-if has('win64')
-	colorscheme molokai
-endif
+colorscheme molokai
 
 """"""""""""""""
 " DEIN
@@ -60,7 +56,7 @@ endif
 if &compatible
 	set nocompatible
 endif
-filetype plugin indent off
+filetype plugin indent on
 
 set runtimepath+=~/.vim/dein/dein.vim
 call dein#begin(expand('~/.vim/dein'))
@@ -69,6 +65,7 @@ call dein#add('Shougo/neocomplcache.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/lightline.vim')
+call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
@@ -195,3 +192,12 @@ au Filetype unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split
 au filetype unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+"""""""""""""""""
+" vim-coffee-script の設定
+"
+
+" vimにファイルタイプを読み込ませる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+
+" indentの設定
+autocmd FileType coffee   setlocal sw=2 sts=2 ts=2 et
