@@ -140,10 +140,6 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " vim起動時にgit差分をハイライトで表示する
 let g:gitgutter_highlight_lines = 1
-" カラムの背景色を変更
-let g:gitgutter_override_sign_column_highlight = 0
-highlight SignColumn ctermbg=brown
-highlight GitGutterAdd ctermfg=blue ctermbg=brown
 
 " 更新時間を早める
 set updatetime=250
