@@ -10,22 +10,9 @@ home=$HOME
 cd $home
 mkdir .vim
 cd .vim
-mkdir bundle
 mkdir colors
 
 Github="https://github.com"
-# vimで使用するライブラリの確保
-cd bundle
-git clone "$Github/Shougo/neobundle.vim"
-git clone "$Github/Shougo/neocomplcache"
-git clone "$Giyhub/Shougo/unite.vim"
-git clone "$Github/airblade/vim-gitgutter"
-git clone "$Github/itchyny/lightline.vim"
-git clone "$Github/miyakogi/seiya.vim"
-git clone "$Github/scrooloose/nerdtree"
-git clone "$Github/tpope/vim-fugitive"
-git clone "$Github/twitvim/twitvim"
-cd ../
 cd colors
 git clone "$Github/tomasr/molokai"
 git clone "$Github/w0ng/vim-hybrid"

@@ -80,9 +80,7 @@ endif
 " lightlineの設定
 "
 
-if !has('gui_running')
-	set t_Co=256
-endif
+set t_Co=256
 
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
