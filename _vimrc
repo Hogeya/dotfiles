@@ -106,6 +106,9 @@ let NERDTreeShowHidden = 1
 " NerdTreeの幅設定
 let NERDTreeWinSize = 20
 
+" 起動時にNERDTREE表示
+autocmd vimenter * NERDTree
+
 """""""""""""""""""
 " NEOCOMPLCACHEの設定
 "
