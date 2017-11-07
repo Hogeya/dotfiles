@@ -67,6 +67,7 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/lightline.vim')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
+call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
 call dein#add('twitvim/twitvim')
@@ -198,3 +199,10 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 
 " indentの設定
 autocmd FileType coffee   setlocal sw=2 sts=2 ts=2 et
+
+""""""""""""""""
+" accelerated-jk
+"
+
+nmap j <Plug>(accelerated_jk_gj_position)
+nmap k <Plug>(accelerated_jk_gk_position)
