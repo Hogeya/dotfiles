@@ -44,7 +44,11 @@ noremap ; :
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+" reload
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
+
+" highlight解除キー
+nnoremap ,h :noh<CR>
 
 syntax on
 
