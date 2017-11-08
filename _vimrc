@@ -44,7 +44,11 @@ noremap ; :
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+" reload
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
+
+" highlight解除キー
+nnoremap ,h :noh<CR>
 
 syntax on
 
@@ -65,6 +69,7 @@ call dein#add('Shougo/neocomplcache.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/lightline.vim')
+call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
 call dein#add('rhysd/accelerated-jk')
@@ -99,16 +104,20 @@ let g:lightline = {
 "
 
 " Ctr + r でTreeを開けるようにする
-nnoremap <silent><C-t> :NERDTreeToggle<CR>
+nnoremap <silent><C-t> :NERDTreeTabsToggle<CR>
+
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 " 隠しファイルを表示
 let NERDTreeShowHidden = 1
 
 " NerdTreeの幅設定
-let NERDTreeWinSize = 20
+let NERDTreeWinSize = 25
 
-" 起動時にNERDTREE表示
-autocmd vimenter * NERDTree
+" DefaultでBookmarkを表示
+let g:NERDTreeShowBookmarks = 1
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""
 " NEOCOMPLCACHEの設定
