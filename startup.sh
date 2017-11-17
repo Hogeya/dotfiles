@@ -11,11 +11,14 @@ cd $home
 mkdir .vim
 cd .vim
 mkdir colors
+mkdir dein
 
 Github="https://github.com"
-cd colors
+cd ~/.vim/colors
 git clone "$Github/tomasr/molokai"
 git clone "$Github/w0ng/vim-hybrid"
+cd ~/.vim/dein
+git clone "$Github/Shougo/dein.vim"
 mv molokai/colors/molokai.vim molokai.vim
 mv vim-hybrid/colors/hybrid.vim hybrid.vim
 rm -rf molokai
