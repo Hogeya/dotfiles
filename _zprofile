@@ -1,3 +1,1 @@
-cat $HOME/dotfiles/startup_zsh.txt
-
-tmux new-session \; source-file ~/dotfiles/_tmux_new_session
+cowsay welcome zsh!
