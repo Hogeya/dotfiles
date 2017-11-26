@@ -1,1 +1,1 @@
-cowsay welcome zsh!
+cowsay -f tux welcome zsh!
