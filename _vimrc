@@ -89,15 +89,15 @@ endif
 set t_Co=256
 
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
-	\ 'active': {
-	\	'left': [ [ 'mode', 'paste'],
-	\			  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-	\ },
-	\ 'component_function': {
-	\	'gitbranch': 'fugitive#head'
-	\ },
-	\ }
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste'],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
 
 """""""""""""""""""
 " NERDTREEの設定
@@ -138,8 +138,8 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-	\ 'default' : ''
-	\ }
+    \ 'default' : ''
+    \ }
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplcache#undo_completion()
