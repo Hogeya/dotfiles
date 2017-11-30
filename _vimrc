@@ -60,7 +60,7 @@ colorscheme molokai
 " DEIN
 "
 if &compatible
-	set nocompatible
+  set nocompatible
 endif
 filetype plugin indent on
 
@@ -84,21 +84,22 @@ call dein#add('twitvim/twitvim')
 call dein#end()
 
 if dein#check_install()
-	call dein#install()
+  call dein#install()
 endif
 
 """"""""""""""""""
 " autocmd の設定一覧
 "
 augroup vimrc_loading
-	autocmd!
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-	autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
-	autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
-	autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
-	autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
-	autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
-	autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
+  autocmd!
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd BufNewFile,BufRead vim set expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
+  autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
 augroup END
 
 """"""""""""""""""
@@ -108,15 +109,15 @@ augroup END
 set t_Co=256
 
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste'],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
-    \ },
-    \ }
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste'],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head'
+  \ },
+  \ }
 
 """""""""""""""""""
 " NERDTREEの設定
@@ -155,12 +156,12 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-    \ }
+  \ 'default' : ''
+  \ }
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-g>  neocomplcache#undo_completion()
+inoremap <expr><C-l>  neocomplcache#complete_common_string()
 
 """"""""""""""""""""
 " vim-gitgutterの設定
