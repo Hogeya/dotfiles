@@ -205,10 +205,7 @@ au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "
 
 " vimにファイルタイプを読み込ませる
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-
-" indentの設定
-autocmd FileType coffee   setlocal sw=2 sts=2 ts=2 et
+au BufNewFile,BufRead *.coffee set filetype=coffee expandtab
 
 """"""""""""""""
 " accelerated-jk
@@ -220,6 +217,6 @@ nmap k <Plug>(accelerated_jk_gk_position)
 """"""""""""""""
 " ejs-syntax の設定
 "
-autocmd BufNewFile, BufRead *.ejs set filetype=ejs
-autocmd BufNewFile, BufRead *._ejs set filetype=ejs
+autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab
+autocmd BufNewFile,BufRead *._ejs set filetype=ejs expandtab
 
