@@ -72,6 +72,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
+call dein#add('nikvdp/ejs-syntax')
 call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
@@ -215,3 +216,10 @@ autocmd FileType coffee   setlocal sw=2 sts=2 ts=2 et
 
 nmap j <Plug>(accelerated_jk_gj_position)
 nmap k <Plug>(accelerated_jk_gk_position)
+
+""""""""""""""""
+" ejs-syntax の設定
+"
+autocmd BufNewFile, BufRead *.ejs set filetype=ejs
+autocmd BufNewFile, BufRead *._ejs set filetype=ejs
+
