@@ -54,7 +54,11 @@ nnoremap ,h :noh<CR>
 
 syntax on
 
-colorscheme molokai
+if system('uname') == "Darwin\n"
+  colorscheme hybrid
+else
+  colorscheme molokai
+endif
 
 """"""""""""""""
 " DEIN
@@ -223,4 +227,6 @@ au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 nmap j <Plug>(accelerated_jk_gj_position)
 nmap k <Plug>(accelerated_jk_gk_position)
+nmap <Down> <Plug>(accelerated_jk_gj_position)
+nmap <Up> <Plug>(accelerated_jk_gk_position)
 
