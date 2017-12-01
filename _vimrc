@@ -54,7 +54,11 @@ nnoremap ,h :noh<CR>
 
 syntax on
 
-colorscheme molokai
+if system('uname') == "Darwin\n"
+  colorscheme hybrid
+else
+  colorscheme molokai
+endif
 
 """"""""""""""""
 " DEIN
