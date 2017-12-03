@@ -81,6 +81,7 @@ call dein#add('jwalton512/vim-blade')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
 call dein#add('nikvdp/ejs-syntax')
+call dein#add('posva/vim-vue')
 call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
@@ -104,6 +105,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
 augroup END
 
 """"""""""""""""""
