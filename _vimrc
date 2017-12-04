@@ -78,7 +78,7 @@ call dein#add('groenewege/vim-less')
 call dein#add('itchyny/lightline.vim')
 call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('jwalton512/vim-blade')
-call dein#add('kannnokannno/previm')
+call dein#add('kannokanno/previm')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
 call dein#add('nikvdp/ejs-syntax')
@@ -108,6 +108,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtab=2
   autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
+  autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
 augroup END
