@@ -78,13 +78,16 @@ call dein#add('groenewege/vim-less')
 call dein#add('itchyny/lightline.vim')
 call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('jwalton512/vim-blade')
+call dein#add('kannokanno/previm')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('miyakogi/seiya.vim')
 call dein#add('nikvdp/ejs-syntax')
+call dein#add('plasticboy/vim-markdown')
 call dein#add('posva/vim-vue')
 call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
+call dein#add('tyru/open-browser.vim')
 call dein#add('twitvim/twitvim')
 call dein#end()
 
@@ -101,9 +104,12 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead vim set expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead .env.* set filetype=sh expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtab=2
   autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
+  autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
 augroup END
@@ -231,3 +237,8 @@ nmap j <Plug>(accelerated_jk_gj_position)
 nmap k <Plug>(accelerated_jk_gk_position)
 nmap <Down> <Plug>(accelerated_jk_gj_position)
 nmap <Up> <Plug>(accelerated_jk_gk_position)
+
+""""""""""""""""
+" vim-markdownの設定
+"
+let g:previm_open_cmd = 'open -a Chrome'
