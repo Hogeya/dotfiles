@@ -57,6 +57,9 @@ zle -N self-insert url-quote-magic
 # VCS情報の表示を有効
 autoload -Uz vcs_info
 
+# zsh-historyをワンライナーで
+function history-all {history -E 1}
+
 #########################################################
 # OPTIONS
 #
