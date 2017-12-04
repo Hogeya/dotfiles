@@ -104,6 +104,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead vim set expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead .env.* set filetype=sh expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtab=2
