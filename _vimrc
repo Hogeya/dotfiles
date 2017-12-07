@@ -41,10 +41,11 @@ set wrapscan
 " OSXとそれ以外でキーバインドを変更する
 if system('uname') =="Darwin\n"
   colorscheme hybrid
-  nnoremap <D-n> gt
-  nnoremap <D-p> gT
-  inoremap <expr><D-g>  neocomplcache#undo_completion()
-  inoremap <expr><D-l>  neocomplcache#complete_common_string()
+  " TODO そのうちkeybind変える
+  nnoremap <C-n> gt
+  nnoremap <C-p> gT
+  inoremap <expr><C-g>  neocomplcache#undo_completion()
+  inoremap <expr><C-l>  neocomplcache#complete_common_string()
 else
   colorscheme molokai
   nnoremap <C-n> gt
