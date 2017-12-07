@@ -35,16 +35,30 @@ set whichwrap=b,s,[,],<,>
 set wildmode=list:longest
 set wrapscan
 
+""""""""""""""""
+" Keybinds
+"
+" OSXとそれ以外でキーバインドを変更する
+if system('uname') =="Darwin\n"
+  colorscheme hybrid
+  nnoremap <D-n> gt
+  nnoremap <D-p> gT
+  inoremap <expr><D-g>  neocomplcache#undo_completion()
+  inoremap <expr><D-l>  neocomplcache#complete_common_string()
+else
+  colorscheme molokai
+  nnoremap <C-n> gt
+  nnoremap <C-p> gT
+  inoremap <expr><C-g>  neocomplcache#undo_completion()
+  inoremap <expr><C-l>  neocomplcache#complete_common_string()
+endif
+
 " 折り返し時に表示行単位での移動をできるようにする
 nnoremap j gj
 nnoremap k gk
 
 " 英字キーボードに合わせてコロンとセミコロンを入れ替える
 noremap ; :
-
-" タブ移動
-nnoremap <C-n> gt
-nnoremap <C-p> gT
 
 " reload
 nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
@@ -53,12 +67,6 @@ nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
 nnoremap ,h :noh<CR>
 
 syntax on
-
-if system('uname') == "Darwin\n"
-  colorscheme hybrid
-else
-  colorscheme molokai
-endif
 
 """"""""""""""""
 " DEIN
@@ -171,9 +179,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : ''
   \ }
 
-" Plugin key-mappings.
-inoremap <expr><C-g>  neocomplcache#undo_completion()
-inoremap <expr><C-l>  neocomplcache#complete_common_string()
 
 """"""""""""""""""""
 " vim-gitgutterの設定
@@ -232,7 +237,6 @@ au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 """"""""""""""""
 " accelerated-jk
 "
-
 nmap j <Plug>(accelerated_jk_gj_position)
 nmap k <Plug>(accelerated_jk_gk_position)
 nmap <Down> <Plug>(accelerated_jk_gj_position)
