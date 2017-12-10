@@ -96,8 +96,8 @@ call dein#add('posva/vim-vue')
 call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
-call dein#add('tyru/open-browser.vim')
 call dein#add('twitvim/twitvim')
+call dein#add('tyru/open-browser.vim')
 call dein#end()
 
 if dein#check_install()
@@ -246,4 +246,4 @@ nmap <Up> <Plug>(accelerated_jk_gk_position)
 """"""""""""""""
 " vim-markdownの設定
 "
-let g:previm_open_cmd = 'open -a Chrome'
+let g:previm_open_cmd = 'open -a Vivaldi'
