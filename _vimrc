@@ -246,4 +246,4 @@ nmap <Up> <Plug>(accelerated_jk_gk_position)
 """"""""""""""""
 " vim-markdownの設定
 "
-let g:previm_open_cmd = 'open -a Chrome'
+let g:previm_open_cmd = 'open -a Vivaldi'
