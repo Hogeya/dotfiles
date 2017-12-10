@@ -32,6 +32,10 @@ cd $HOME
 ln -sf $HOME/dotfiles/_vimrc .vimrc
 ln -sf $HOME/dotfiles/_zshrc .zshrc
 ln -sf $HOME/dotfiles/_tmux_conf .tmux.conf
-ln -sf $HOME//dotfiles/_zprofile .zprofile
+ln -sf $HOME/dotfiles/_zprofile .zprofile
+ln -sf $HOME/dotfiles/_gitconfig .gitconfig
+cp ~/dotfiles/_gitconfig_privacy ~/.gitconfig.privacy
+# TODO 入力した値をうまいこと.gitconfig.privacyに反映できるようにする
+vim ~/.gitconfig.privacy
 
 echo DONE!!
