@@ -32,6 +32,8 @@ cd $HOME
 ln -sf $HOME/dotfiles/_vimrc .vimrc
 ln -sf $HOME/dotfiles/_zshrc .zshrc
 ln -sf $HOME/dotfiles/_tmux_conf .tmux.conf
-ln -sf $HOME//dotfiles/_zprofile .zprofile
+ln -sf $HOME/dotfiles/_zprofile .zprofile
+ln -sf $HOME/dotfiles/_gitconfig .gitconfig
+ln -sf $HOME/dotfiles/_gitconfig_privacy .gitconfig.privacy
 
 echo DONE!!

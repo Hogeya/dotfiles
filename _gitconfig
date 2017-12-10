@@ -1,0 +1,24 @@
+[include]
+  path = ~/.gitconfig.privacy
+
+[core]
+  preloadindex = true
+  fschace = true
+  editor = vim
+
+[color]
+  ui = true
+
+[alias]
+  fe = fetch --prune --all
+  am = commit --amend
+  co = checkout
+  st = status
+  di = diff
+  cu = name-rev --name-only HEAD
+
+  push-cu = !git push -u origin `git cu`
+  push-fcu = !git push -uf origin `git cu`
+
+[push]
+  default = simple
