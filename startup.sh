@@ -7,7 +7,7 @@ echo Start make vim libraly
 
 home=$HOME
 # .vimディレクトリをカレントに作成
-cd $home
+cd $HOME
 mkdir .vim
 cd .vim
 mkdir colors
@@ -25,6 +25,18 @@ rm -rf molokai
 rm -rf vim-hybrid
 
 echo DONE!!
+
+echo Start make zsh libraly
+
+cd $HOME
+mkdir .zsh
+cd .zsh
+git clone "$Github/hchbaw/auto-fu.zsh"
+cd auto-fu.zsh
+git checkout -b pu origin/pu
+
+echo DONE!!
+
 echo Start make Symlinks at HOME
 
 # シムリンクを作成する
