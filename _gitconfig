@@ -10,6 +10,7 @@
   ui = true
 
 [alias]
+  br = branch
   fe = fetch --prune --all
   am = commit --amend
   co = checkout
