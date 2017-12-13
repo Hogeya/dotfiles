@@ -66,6 +66,9 @@ zle -N self-insert url-quote-magic
 # VCS情報の表示を有効
 autoload -Uz vcs_info
 
+# zsh terminal
+test -f ~/.moonline/moonline.zsh && source ~/.moonline/moonline.zsh && moonline initialize
+
 #########################################################
 # OPTIONS
 #
