@@ -70,7 +70,7 @@ zle -N self-insert url-quote-magic
 autoload -Uz vcs_info
 
 # zsh terminal
-test -f ~/.moonline/moonline.zsh && source ~/.moonline/moonline.zsh && moonline initialize
+test -f ~/.zsh/moonline/moonline.zsh && source ~/.zsh/moonline/moonline.zsh && moonline initialize
 
 #########################################################
 # OPTIONS
