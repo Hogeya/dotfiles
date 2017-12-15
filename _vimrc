@@ -89,7 +89,6 @@ call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('jwalton512/vim-blade')
 call dein#add('kannokanno/previm')
 call dein#add('kchmck/vim-coffee-script')
-call dein#add('miyakogi/seiya.vim')
 call dein#add('nikvdp/ejs-syntax')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('posva/vim-vue')
@@ -158,6 +157,9 @@ let NERDTreeWinSize = 25
 " DefaultでBookmarkを表示
 let g:NERDTreeShowBookmarks = 1
 
+" アイコンを指定
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 """""""""""""""""""
 " NEOCOMPLCACHEの設定
 "
@@ -192,11 +194,6 @@ let g:gitgutter_highlight_lines = 1
 set updatetime=250
 
 filetype plugin indent on
-
-"""""""""""""""""""
-" Seiyaの設定
-"
-let g:seiya_auto_enable = 1
 
 """""""""""""""""""
 " twitvimの設定
