@@ -115,7 +115,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead .env.* set filetype=sh expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtab=2
+  autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
   autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
