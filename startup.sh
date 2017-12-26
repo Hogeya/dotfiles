@@ -38,6 +38,15 @@ git clone https://github.com/kagamilove0707/moonline.zsh.git ~/.zsh/moonline
 
 echo DONE!!
 
+echo Start make tmux library
+
+cd $HOME
+mkdir .tmux
+cd .tmux
+git clone "$Github/tmux-plugin/tmp ~/.tmux/plugins/tpm"
+
+echo DONE!!
+
 echo Start make Symlinks at HOME
 
 # シムリンクを作成する
