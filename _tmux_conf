@@ -66,3 +66,12 @@ bind h resize-pane -L 5
 bind j resize-pane -D 5
 bind k resize-pane -U 5
 bind l resize-pane -R 5
+
+# List Of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-resurrect-auto'
+
+run '~/.tmux/plugins/tpm/tpm'
+run-shell '~/.tmux/plugins/tmux-resurrect/resurrect.tmux'
