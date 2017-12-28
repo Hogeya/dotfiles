@@ -26,18 +26,18 @@ bind r source-file ~/.tmux.conf \; display "RELOADED!"
 set-option -g default-terminal "screen-256color"
 
 # ステータスバーの設定
-set-option -g status-fg black
-set-option -g status-bg black
+set-option -g status-fg white
+set-option -g status-bg colour008
 set-option -g status-attr bright
 
 # windowの色設定
-set-window-option -g window-status-fg black
-set-window-option -g window-status-bg black
+set-window-option -g window-status-fg white
+set-window-option -g window-status-bg colour008
 set-window-option -g window-status-attr bright
 
 # アクティブWindowを目立たせる
-set-window-option -g window-status-current-fg white
-set-window-option -g window-status-current-bg black
+set-window-option -g window-status-current-fg colour229
+set-window-option -g window-status-current-bg colour008
 set-window-option -g window-status-current-attr bright
 
 # ペインボーダーの色設定
