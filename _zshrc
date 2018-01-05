@@ -56,8 +56,6 @@ compinit
 
 # プロンプト
 TERM=xterm-256color
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%>>> "
 
 # フック機能を有効
 autoload -Uz add-zsh-hook
