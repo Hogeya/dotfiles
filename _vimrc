@@ -94,6 +94,7 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('posva/vim-vue')
 call dein#add('rhysd/accelerated-jk')
 call dein#add('scrooloose/nerdtree')
+call dein#add('thinca/vim-splash')
 call dein#add('tpope/vim-fugitive')
 call dein#add('twitvim/twitvim')
 call dein#add('tyru/open-browser.vim')
@@ -108,7 +109,7 @@ endif
 "
 augroup vimrc_loading
   autocmd!
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd Bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd BufNewFile,BufRead vim set expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
@@ -143,9 +144,10 @@ let g:lightline = {
 " NERDTREEの設定
 "
 
-" Ctr + r でTreeを開けるようにする
+" Ctr + t でTreeを開けるようにする
 nnoremap <silent><C-t> :NERDTreeTabsToggle<CR>
 
+" vim起動時にconsoleをスタートアップ
 let g:nerdtree_tabs_open_on_console_startup = 1
 
 " 隠しファイルを表示
@@ -244,3 +246,9 @@ nmap <Up> <Plug>(accelerated_jk_gk_position)
 " vim-markdownの設定
 "
 let g:previm_open_cmd = 'open -a Vivaldi'
+
+""""""""""""""""
+" vim-splashの設定
+"
+
+let g:splash#path="~/dotfiles/src/vim_intro.txt"
