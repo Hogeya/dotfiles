@@ -18,6 +18,8 @@
   di = diff
   cu = name-rev --name-only HEAD
 
+  co-today = !git co $(date "+%Y-%m-%d")
+  co-b-today = !git co -b $(date "+%Y-%m-%d")
   push-cu = !git push -u origin `git cu`
   push-fcu = !git push -uf origin `git cu`
 
