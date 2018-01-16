@@ -15,13 +15,13 @@ esac
 # plugins
 
 ## ZSH補完の呼び出し
-source ~/.zsh/auto-fu.zsh/auto-fu.zsh
-function zle-line-init(){
-  auto-fu-init
-}
-zle -N zle-line-init
-# 「-azfu-」を表示させないための記述
-zstyle ':auto-fu:var' postdisplay $''
+# source ~/.zsh/auto-fu.zsh/auto-fu.zsh
+# function zle-line-init(){
+#   auto-fu-init
+# }
+# zle -N zle-line-init
+## 「-azfu-」を表示させないための記述
+# zstyle ':auto-fu:var' postdisplay $''
 
 ########################################################
 # BASE SETTING
@@ -67,8 +67,10 @@ zle -N self-insert url-quote-magic
 # VCS情報の表示を有効
 autoload -Uz vcs_info
 
-# zsh terminal
-test -f ~/.zsh/moonline/moonline.zsh && source ~/.zsh/moonline/moonline.zsh && moonline initialize
+PROMPT="%{${reset_color}%}
+%{${bg[green]}%} %n % %{${reset_color}%} %~ % %{${reset_color}%}
+$ "
+RPROMPT="%{${reset_color}%} %*"
 
 #########################################################
 # OPTIONS
