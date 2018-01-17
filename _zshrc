@@ -111,6 +111,13 @@ setopt share_history
 #  ALIAS
 #
 
-alias ll='ls --color=auto -l'
+case ${OSTYPE} in
+  darwin*)
+    alias ll='ls -GFl'
+    ;;
+  cygwin*)
+    alias ll='ls --color=auto -l'
+    ;;
+esac
 alias ssh='ssh -F ~/.ssh/config'
 alias scp='scp -F ~/.ssh/config'
