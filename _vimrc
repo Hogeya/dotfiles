@@ -1,5 +1,7 @@
 " Author: Takatsugu Yoneya
 
+syntax on "シンタックスハイライトを有効
+
 set autoindent   " 改行時に前の行のインデントを計測
 set autoread     " 自動的にファイルを読み直す
 set autowrite    " バッファを自動的に保存
@@ -143,6 +145,9 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
+
+  " add templete
+  autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
 augroup END
 
 """"""""""""""""""
