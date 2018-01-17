@@ -145,6 +145,9 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
   autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
+
+  " add templete
+  autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
 augroup END
 
 """"""""""""""""""
