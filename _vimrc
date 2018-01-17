@@ -1,5 +1,7 @@
 " Author: Takatsugu Yoneya
 
+syntax on "シンタックスハイライトを有効
+
 set autoindent   " 改行時に前の行のインデントを計測
 set autoread     " 自動的にファイルを読み直す
 set autowrite    " バッファを自動的に保存
