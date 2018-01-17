@@ -26,18 +26,6 @@ rm -rf vim-hybrid
 
 echo DONE!!
 
-echo Start make zsh libraly
-
-cd $HOME
-mkdir .zsh
-cd .zsh
-git clone "$Github/hchbaw/auto-fu.zsh"
-cd auto-fu.zsh
-git checkout -b pu origin/pu
-git clone https://github.com/kagamilove0707/moonline.zsh.git ~/.zsh/moonline
-
-echo DONE!!
-
 echo Start make tmux library
 
 cd $HOME
