@@ -23,10 +23,16 @@ set smartindent  " 適切な箇所のインデントを増減させる C構文�
 set title        " タイトルを表示させる
 set wrapscan     " 検索時に最後まで行ったら最初に戻る
 
+" □や○文字が崩れる問題を解決"
+set ambiwidth=double
 " バックスペースで削除できる対象
 set backspace=indent,eol,start
+" ヤンクした際にクリップボードにコピーする設定
+set clipboard=unnamed,autoselect
 " vimの読み取り文字コード
 set encoding=utf8
+" 保存時の文字コード
+set fileencoding=utf8
 " ファイル書き込み時の文字コード
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 " 改行コード
@@ -34,7 +40,7 @@ set fileformats=unix,dos,mac
 " ステータスライン表示設定
 set laststatus=2
 " 不可視文字の可視化設定
-set listchars=tab:>-,eol:↲,nbsp:%,extends:>,precedes:<
+set listchars=tab:\▸\-,eol:↲
 " カーソルが括弧に飛ぶ時間の設定
 set matchtime=1
 " マウス設定
@@ -50,7 +56,7 @@ set softtabstop=2
 " 画面上で表示する一つのタブの幅設定
 set tabstop=4
 " 行移動設定
-set whichwrap=h,l,b,s,[,],<,>
+set whichwrap=h,l,b,s,[,],<,>,~
 " コマンドラインモードでのファイル名補完有効設定
 set wildmenu wildmode=list:longest
 
@@ -153,7 +159,6 @@ augroup END
 """"""""""""""""""
 " lightlineの設定
 "
-
 set t_Co=256
 
 let g:lightline = {
@@ -218,7 +223,6 @@ endfunction
 """""""""""""""""""
 " NERDTREEの設定
 "
-
 " Ctr + t でTreeを開けるようにする
 nnoremap <silent><C-t> :NERDTreeTabsToggle<CR>
 
@@ -240,7 +244,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 """""""""""""""""""
 " NEOCOMPLCACHEの設定
 "
-
 " AcpComplpopを無効化
 let g:acp_enableAtStartup = 0
 " 起動時にneocomplcacheを有効
@@ -263,7 +266,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
 """"""""""""""""""""
 " vim-gitgutterの設定
 "
-
 " vim起動時にgit差分をハイライトで表示する
 let g:gitgutter_highlight_lines = 1
 
@@ -275,7 +277,6 @@ filetype plugin indent on
 """""""""""""""""""
 " twitvimの設定
 "
-
 " twitvimを有効にする
 let g:twit_vim_enable_python = 1
 let twitvim_count = 40
@@ -288,7 +289,6 @@ nnoremap ,tn :<C-u>NextTwitter<CR>
 """"""""""""""""""
 " Unite.vim の設定
 "
-
 " 入力モードでスタートさせる
 let g:unite_enable_start_insert=1
 
@@ -325,5 +325,4 @@ let g:previm_open_cmd = 'open -a Vivaldi'
 """"""""""""""""
 " vim-splashの設定
 "
-
 let g:splash#path="~/dotfiles/src/vim_intro.txt"
