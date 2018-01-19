@@ -67,6 +67,10 @@ bind j resize-pane -D 5
 bind k resize-pane -U 5
 bind l resize-pane -R 5
 
+# セッション切り替えキーバインド
+bind N switch-client -n
+bind P switch-client -p
+
 # List Of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
