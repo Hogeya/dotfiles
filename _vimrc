@@ -65,7 +65,7 @@ set wildmenu wildmode=list:longest
 "
 " OSXとそれ以外でキーバインドを変更する
 if system('uname') =="Darwin\n"
-  colorscheme molokai
+  colorscheme hybrid
   " TODO そのうちkeybind変える
   nnoremap <C-n> gt
   nnoremap <C-p> gT
