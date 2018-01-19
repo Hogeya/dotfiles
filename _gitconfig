@@ -24,7 +24,7 @@
   merge-today = !git merge origin/$(date "+%Y-%m-%d")
   push-cu = !git push -u origin `git cu`
   push-fcu = !git push -uf origin `git cu`
-  delete-merged-branches = !git br --merged | grep -vE '^*|develop$|master$' | xargs -I % git br -D %
+  delete-merged-branches = !git br --merged | grep -vE 'develop$|master$' | xargs -I % git br -D %
 
 [push]
   default = simple
