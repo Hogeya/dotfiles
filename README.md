@@ -3,10 +3,9 @@ Manage dotfiles Repository
 
 # Environment
 - OS
+  - OSX or Wondows10
 
-OSX or Wondows10
-
-- Needs
+- Install
   - tmux 2.6
   - zsh 5.3
   - vim 8.0
@@ -14,8 +13,7 @@ OSX or Wondows10
   - cowsay 1.07
 
 - Terminal
-
-Iterm2 or Cygwin
+  - Iterm2 or Cygwin
 
 # Vim
 Managed by dein.vim
