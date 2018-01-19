@@ -155,6 +155,7 @@ augroup vimrc_loading
 
   " add templete
   autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
+  autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python_signature.txt
 augroup END
 
 function! Cmdphp()
