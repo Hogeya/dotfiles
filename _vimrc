@@ -124,6 +124,7 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('posva/vim-vue')
   call dein#add('rhysd/accelerated-jk')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
   call dein#add('thinca/vim-splash')
   call dein#add('tpope/vim-fugitive')
   call dein#add('twitvim/twitvim')
@@ -140,21 +141,97 @@ endif
 augroup vimrc_loading
   autocmd!
   autocmd Bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd BufNewFile,BufRead vim set expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.coffee set filetype=coffee expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.ejs set filetype=ejs expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead .env.* set filetype=sh expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.html set filetype=html expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.less set filetype=less expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.md set filetype=markdown expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab shiftwidth=4 softtabstop=4
-  autocmd BufNewFile,BufRead *.py set filetype=python expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.blade.php set filetype=php expandtab shiftwidth=2 softtabstop=2
-  autocmd BufNewFile,BufRead *.vue set filetype=vue expandtab shiftwidth=2 softtabstop=2
+  autocmd BufNewFile,BufRead vim call Cmdvim()
+  autocmd BufNewFile,BufRead *.coffee call Cmdcoffee()
+  autocmd BufNewFile,BufRead *.ejs call Cmdejs()
+  autocmd BufNewFile,BufRead .env.* call Cmdenv()
+  autocmd BufNewFile,BufRead *.html call Cmdhtml()
+  autocmd BufNewFile,BufRead *.less call Cmdless()
+  autocmd BufNewFile,BufRead *.md call Cmdmd()
+  autocmd BufNewFile,BufRead *.php call Cmdphp()
+  autocmd BufNewFile,BufRead *.py call Cmdpython()
+  autocmd BufNewFile,BufRead *.blade.php call Cmdbladephp()
+  autocmd BufNewFile,BufRead *.vue call Cmdvue()
 
   " add templete
   autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
 augroup END
+
+function! Cmdphp()
+  set filetype=php
+  set noexpandtab
+  set shiftwidth=4
+  set softtabstop=4
+endfunction
+
+function! Cmdbladephp()
+  set filetype=php
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdpython()
+  set filetype=python
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdvim()
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdcoffee()
+  set filetype=coffee
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdejs()
+  set filetype=ejs
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdenv()
+  set filetype=sh
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdhtml()
+  set filetype=html
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdless()
+  set filetype=less
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdmd()
+  set filetype=markdown
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdvue()
+  set filetype=vue
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
 
 """"""""""""""""""
 " lightlineの設定
@@ -165,17 +242,18 @@ let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'syntastic' ] ]
         \ },
         \ 'component_function': {
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filename': 'LightlineFilename',
+        \   'filetype': 'LightlineFiletype',
+        \   'fugitive': 'LightlineFugitive',
+        \   'mode': 'LightlineMode',
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
+        \   'syntastic' : 'SyntasticStatuslineFlag'
         \ }
         \ }
 
@@ -241,6 +319,7 @@ let g:NERDTreeShowBookmarks = 1
 " アイコンを指定
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
 """""""""""""""""""
 " NEOCOMPLCACHEの設定
 "
@@ -261,7 +340,6 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : ''
   \ }
-
 
 """"""""""""""""""""
 " vim-gitgutterの設定
@@ -326,3 +404,12 @@ let g:previm_open_cmd = 'open -a Vivaldi'
 " vim-splashの設定
 "
 let g:splash#path="~/dotfiles/src/vim_intro.txt"
+
+""""""""""""""""
+" synatsticの設定
+"
+" Recomended settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
