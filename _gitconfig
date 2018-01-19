@@ -17,11 +17,14 @@
   st = status
   di = diff
   cu = name-rev --name-only HEAD
+  fed = !git fe && git delete-merged-branches
 
   co-today = !git co $(date "+%Y-%m-%d")
   co-b-today = !git co -b $(date "+%Y-%m-%d")
+  merge-today = !git merge origin/$(date "+%Y-%m-%d")
   push-cu = !git push -u origin `git cu`
   push-fcu = !git push -uf origin `git cu`
+  delete-merged-branches = !git br --merged | grep -vE '^*|develop$|master$' | xargs -I % git br -D %
 
 [push]
   default = simple
