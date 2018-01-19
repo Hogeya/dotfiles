@@ -40,7 +40,7 @@ set fileformats=unix,dos,mac
 " ステータスライン表示設定
 set laststatus=2
 " 不可視文字の可視化設定
-set listchars=tab:\▸\-,eol:↲
+set listchars=tab:\▸\ ,eol:↲
 " カーソルが括弧に飛ぶ時間の設定
 set matchtime=1
 " マウス設定
