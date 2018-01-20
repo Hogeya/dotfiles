@@ -121,3 +121,12 @@ case ${OSTYPE} in
 esac
 alias ssh='ssh -F ~/.ssh/config'
 alias scp='scp -F ~/.ssh/config'
+
+########################################################
+#  todoist
+#
+case ${OSTYPE} in
+  darwin*)
+    source ~/.zsh/todoist_functions.sh
+    ;;
+esac
