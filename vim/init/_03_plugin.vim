@@ -6,7 +6,6 @@
 if &compatible
   set nocompatible
 endif
-filetype plugin indent on
 
 set runtimepath+=~/.vim/dein/dein.vim
 call dein#begin(expand('~/.vim/dein'))
