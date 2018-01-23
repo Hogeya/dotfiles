@@ -15,38 +15,25 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.py call Cmdpython()
   autocmd BufNewFile,BufRead *.vim call Cmdvim()
   autocmd BufNewFile,BufRead *.vue call Cmdvue()
+  autocmd BufNewFile,BufRead *.zsh call Cmdzsh()
 
+  " dotfiles
   autocmd BufNewFile,BufRead .env call Cmdenv()
   autocmd BufNewFile,BufRead .env.* call Cmdenv()
+  autocmd BufNewFile,BufRead .gitconfig call Cmdgitconfig()
+  autocmd BufNewFile,BufRead .vimrc call Cmdvim()
+  autocmd BufNewFile,BufRead .zshrc call Cmdzsh()
+
+  " blade file
   autocmd BufNewFile,BufRead *.blade.php call Cmdbladephp()
+
   " add templete
   autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
   autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python_signature.txt
 augroup END
 
-function! Cmdphp()
-  set filetype=php
-  set noexpandtab
-  set shiftwidth=4
-  set softtabstop=4
-endfunction
-
 function! Cmdbladephp()
   set filetype=blade
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdpython()
-  set filetype=python
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdvim()
-  set filetype=vim
   set expandtab
   set shiftwidth=2
   set softtabstop=2
@@ -73,8 +60,8 @@ function! Cmdenv()
   set softtabstop=2
 endfunction
 
-function! Cmdhtml()
-  set filetype=html
+function! Cmdgitconfig()
+  set filetype=gitconfig
   set expandtab
   set shiftwidth=2
   set softtabstop=2
@@ -87,6 +74,13 @@ function! Cmdless()
   set softtabstop=2
 endfunction
 
+function! Cmdhtml()
+  set filetype=html
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
 function! Cmdmd()
   set filetype=markdown
   set expandtab
@@ -94,8 +88,36 @@ function! Cmdmd()
   set softtabstop=2
 endfunction
 
+function! Cmdphp()
+  set filetype=php
+  set noexpandtab
+  set shiftwidth=4
+  set softtabstop=4
+endfunction
+
+function! Cmdpython()
+  set filetype=python
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdvim()
+  set filetype=vim
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
 function! Cmdvue()
   set filetype=vue
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdzsh()
+  set filetype=zsh
   set expandtab
   set shiftwidth=2
   set softtabstop=2
