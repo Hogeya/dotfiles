@@ -1,6 +1,10 @@
 " Author: Takatsugu Yoneya
 
 syntax on "シンタックスハイライトを有効
+if system('uname') != "Darwin\n"
+  colorscheme molokai "TODO なぜかcygwinだとmolokaiを挟まないとhybridが効かない
+endif
+colorscheme hybrid "カラースキーマを有効
 
 set autoindent   " 改行時に前の行のインデントを計測
 set autoread     " 自動的にファイルを読み直す
