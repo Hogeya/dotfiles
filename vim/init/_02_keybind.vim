@@ -6,21 +6,11 @@
 " mapleader
 let mapleader="\<Space>"
 
-" OSXとそれ以外でキーバインドを変更する
-if system('uname') =="Darwin\n"
-  colorscheme hybrid
-  " TODO そのうちkeybind変える
-  nnoremap <Leader>n gt
-  nnoremap <Leader>p gT
-  inoremap <expr><C-g>  neocomplcache#undo_completion()
-  inoremap <expr><C-l>  neocomplcache#complete_common_string()
-else
-  colorscheme molokai
-  nnoremap <Leader>n gt
-  nnoremap <Leader>p gT
-  inoremap <expr><C-g>  neocomplcache#undo_completion()
-  inoremap <expr><C-l>  neocomplcache#complete_common_string()
-endif
+" <Leader>+n で次タブ
+nnoremap <Leader>e gt
+" <Leader>+p で次タブ
+nnoremap <Leader>r gT
+" <Leader>+n で次タブ
 
 " 折り返し時に表示行単位での移動をできるようにする
 nnoremap j gj

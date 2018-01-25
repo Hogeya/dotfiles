@@ -13,7 +13,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeShowHidden = 1
 
 " NerdTreeの幅設定
-let NERDTreeWinSize = 25
+let NERDTreeWinSize = 40
 
 " DefaultでBookmarkを表示
 let g:NERDTreeShowBookmarks = 1

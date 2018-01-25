@@ -20,3 +20,11 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : ''
   \ }
+
+"""""""""""""""""""
+" Keybinds
+"
+" 前回行われた補完をキャンセル
+inoremap <expr><C-g>  neocomplcache#undo_completion()
+" 補完候補の中から共通する部分を補完
+inoremap <expr><C-l>  neocomplcache#complete_common_string()
