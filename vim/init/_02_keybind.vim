@@ -7,9 +7,9 @@
 let mapleader="\<Space>"
 
 " <Leader>+n で次タブ
-nnoremap <Leader>n gt
+nnoremap <Leader>e gt
 " <Leader>+p で次タブ
-nnoremap <Leader>p gT
+nnoremap <Leader>r gT
 " <Leader>+n で次タブ
 
 " 折り返し時に表示行単位での移動をできるようにする
