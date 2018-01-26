@@ -17,10 +17,14 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.vue call Cmdvue()
   autocmd BufNewFile,BufRead *.zsh call Cmdzsh()
 
+  " make file
+  autocmd BufNewFile,BufRead Makefile call Cmdmake()
+
   " dotfiles
   autocmd BufNewFile,BufRead .env call Cmdenv()
   autocmd BufNewFile,BufRead .env.* call Cmdenv()
   autocmd BufNewFile,BufRead .gitconfig call Cmdgitconfig()
+  autocmd BufNewFile,BufRead .tmux.conf call Cmdtmuxconf()
   autocmd BufNewFile,BufRead .vimrc call Cmdvim()
   autocmd BufNewFile,BufRead .zshrc call Cmdzsh()
 
@@ -81,6 +85,13 @@ function! Cmdhtml()
   set softtabstop=2
 endfunction
 
+function! Cmdmake()
+  set filetype=make
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
 function! Cmdmd()
   set filetype=markdown
   set expandtab
@@ -97,6 +108,13 @@ endfunction
 
 function! Cmdpython()
   set filetype=python
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdtmuxconf()
+  set filetype=tmux
   set expandtab
   set shiftwidth=2
   set softtabstop=2

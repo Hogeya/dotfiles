@@ -9,7 +9,15 @@ let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'syntastic' ] ]
+        \   'left': [
+        \             [ 'mode', 'paste' ],
+        \             [ 'filename' ]
+        \           ],
+        \   'right': [
+        \             [ 'syntastic', 'lineinfo' ],
+        \             [ 'percent' ],
+        \             [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ]
+        \   ]
         \ },
         \ 'component_function': {
         \   'fileencoding': 'LightlineFileencoding',
@@ -20,8 +28,9 @@ let g:lightline = {
         \   'mode': 'LightlineMode',
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
-        \   'syntastic' : 'SyntasticStatuslineFlag'
-        \ }
+        \   'syntastic': 'SyntasticStatuslineFlag'
+        \ },
+        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
         \ }
 
 """"""""""""""""""
@@ -53,11 +62,11 @@ function! LightlineFugitive()
 endfunction
 
 function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
 function! LightlineFileencoding()
