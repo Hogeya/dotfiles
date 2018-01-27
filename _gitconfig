@@ -10,21 +10,23 @@
   ui = true
 
 [alias]
-  br = branch
-  fe = fetch --prune --all
   am = commit --amend
+  br = branch
   co = checkout
-  st = status
-  di = diff
   cu = name-rev --name-only HEAD
+  di = diff
+  fe = fetch --prune --all
   fed = !git fe && git delete-merged-branches
+  st = status
 
-  co-today = !git co $(date "+%Y-%m-%d")
   co-b-today = !git co -b $(date "+%Y-%m-%d")
+  co-today = !git co $(date "+%Y-%m-%d")
+  delete-merged-branches = !git br --merged | grep -vE 'develop$|master$' | xargs -I % git br -D %
+  merge-dev = !git merge origin/develop
+  merge-master = !git merge origin/master
   merge-today = !git merge origin/$(date "+%Y-%m-%d")
   push-cu = !git push -u origin `git cu`
   push-fcu = !git push -uf origin `git cu`
-  delete-merged-branches = !git br --merged | grep -vE 'develop$|master$' | xargs -I % git br -D %
 
 [push]
   default = simple
