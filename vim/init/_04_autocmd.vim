@@ -13,6 +13,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.md call Cmdmd()
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call Cmdpython()
+  autocmd BufNewFile,BufRead *.sh call Cmdsh()
   autocmd BufNewFile,BufRead *.vim call Cmdvim()
   autocmd BufNewFile,BufRead *.vue call Cmdvue()
   autocmd BufNewFile,BufRead *.zsh call Cmdzsh()
@@ -108,6 +109,13 @@ endfunction
 
 function! Cmdpython()
   set filetype=python
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdsh()
+  set filetype=sh
   set expandtab
   set shiftwidth=2
   set softtabstop=2
