@@ -10,14 +10,18 @@
   ui = true
 
 [alias]
+  alias = config --get-regexp \"alias.*\"
   am = commit --amend
   br = branch
+  bra = branch -a -vvv
   co = checkout
   cu = name-rev --name-only HEAD
+  cm = commit -m
   di = diff
   fe = fetch --prune --all
   fed = !git fe && git delete-merged-branches
   st = status
+  pop = stash pop
 
   co-b-today = !git co -b $(date "+%Y-%m-%d")
   co-today = !git co $(date "+%Y-%m-%d")
