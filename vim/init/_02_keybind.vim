@@ -6,11 +6,10 @@
 " mapleader
 let mapleader="\<Space>"
 
-" <Leader>+n で次タブ
-nnoremap <Leader>e gt
-" <Leader>+p で次タブ
-nnoremap <Leader>r gT
-" <Leader>+n で次タブ
+" <Leader>+r で次タブ
+nnoremap <Leader>r gt
+" <Leader>+e で前タブ
+nnoremap <Leader>e gT
 
 " 折り返し時に表示行単位での移動をできるようにする
 nnoremap j gj
