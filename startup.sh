@@ -17,10 +17,10 @@ Github="https://github.com"
 cd ~/.vim/colors
 git clone "$Github/tomasr/molokai"
 git clone "$Github/w0ng/vim-hybrid"
-cd ~/.vim/dein
-git clone "$Github/Shougo/dein.vim"
 mv molokai/colors/molokai.vim molokai.vim
 mv vim-hybrid/colors/hybrid.vim hybrid.vim
+cd ~/.vim/dein
+git clone "$Github/Shougo/dein.vim"
 rm -rf molokai
 rm -rf vim-hybrid
 
