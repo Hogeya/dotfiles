@@ -44,5 +44,12 @@ bindkey "^ztc" peco-todoist-close
 
 # todoist close today task
 function peco-todoist-today-close () {
-  local SELECTED_ITEMS="$(todoist l | grep)"
+  local SELECTED_ITEMS="$(todo-today | peco | cut -d ' ' -f 1 | tr '\n' ' ')"
+  if [ -n "$SELECTED_ITEMS" ]; then
+    BUFFER="todoist close $(echo "$SELECTED_ITEMS" | tr '\n' ' ')"
+    CURSOR=$#BUFFER
+  fi
+  zle accept-line
 }
+zle -N peco-todoist-today-close
+bindkey "^zttc" peco-todoist-today-close
