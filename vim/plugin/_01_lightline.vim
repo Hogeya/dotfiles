@@ -5,34 +5,63 @@
 "
 set t_Co=256
 
-let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [
-        \             [ 'mode', 'paste' ],
-        \             [ 'filename' ]
-        \           ],
-        \   'right': [
-        \             [ 'syntastic', 'lineinfo' ],
-        \             [ 'percent' ],
-        \             [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ]
-        \   ]
-        \ },
-        \ 'component_function': {
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filename': 'LightlineFilename',
-        \   'filetype': 'LightlineFiletype',
-        \   'fugitive': 'LightlineFugitive',
-        \   'mode': 'LightlineMode',
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'syntastic': 'SyntasticStatuslineFlag'
-        \ },
-        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-        \ }
-
+if system('uname') == "Darwin\n"
+    let g:lightline = {
+          \ 'colorscheme': 'wombat',
+          \ 'mode_map': {'c': 'NORMAL'},
+          \ 'active': {
+          \   'left': [
+          \             [ 'mode', 'paste' ],
+          \             [ 'filename' ]
+          \           ],
+          \   'right': [
+          \             [ 'syntastic', 'lineinfo' ],
+          \             [ 'percent' ],
+          \             [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ]
+          \   ]
+          \ },
+          \ 'component_function': {
+          \   'fileencoding': 'LightlineFileencoding',
+          \   'fileformat': 'LightlineFileformatWithIcon',
+          \   'filename': 'LightlineFilename',
+          \   'filetype': 'LightlineFiletypeWithIcon',
+          \   'fugitive': 'LightlineFugitive',
+          \   'mode': 'LightlineMode',
+          \   'modified': 'LightlineModified',
+          \   'readonly': 'LightlineReadonly',
+          \   'syntastic': 'SyntasticStatuslineFlag'
+          \ },
+          \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+          \ }
+else
+    let g:lightline = {
+          \ 'colorscheme': 'wombat',
+          \ 'mode_map': {'c': 'NORMAL'},
+          \ 'active': {
+          \   'left': [
+          \             [ 'mode', 'paste' ],
+          \             [ 'filename' ]
+          \           ],
+          \   'right': [
+          \             [ 'syntastic', 'lineinfo' ],
+          \             [ 'percent' ],
+          \             [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ]
+          \   ]
+          \ },
+          \ 'component_function': {
+          \   'fileencoding': 'LightlineFileencoding',
+          \   'fileformat': 'LightlineFileformat',
+          \   'filename': 'LightlineFilename',
+          \   'filetype': 'LightlineFiletype',
+          \   'fugitive': 'LightlineFugitive',
+          \   'mode': 'LightlineMode',
+          \   'modified': 'LightlineModified',
+          \   'readonly': 'LightlineReadonly',
+          \   'syntastic': 'SyntasticStatuslineFlag'
+          \ },
+          \ }
+endif
+  
 """"""""""""""""""
 " lightline functions
 "

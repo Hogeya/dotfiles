@@ -17,3 +17,7 @@ runtime! plugin/_07_accelerated.vim
 runtime! plugin/_08_vim_markdown.vim
 runtime! plugin/_09_vim_splash.vim
 runtime! plugin/_10_syntastic.vim
+if system('uname') == "Darwin\n"
+  runtime! plugin/_11_vim_nerdtree_syntax_highlight.vim
+  runtime! plugin/_12_vim_devicon.vim
+endif

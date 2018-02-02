@@ -11,6 +11,9 @@ Manage dotfiles Repository
   - vim 8.0
   - git 2.15.1
   - cowsay 1.07
+  - go 1.9.2
+  - peco 0.5.1
+  - todoist 0.10.1
 
 - Terminal
   - Iterm2 or Cygwin
