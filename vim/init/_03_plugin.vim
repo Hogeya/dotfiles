@@ -25,7 +25,6 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('rhysd/accelerated-jk')
   call dein#add('scrooloose/nerdtree')
   call dein#add('scrooloose/syntastic')
-  call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
   call dein#add('thinca/vim-splash')
   call dein#add('tpope/vim-fugitive')
   call dein#add('twitvim/twitvim')
@@ -33,6 +32,7 @@ call dein#begin(expand('~/.vim/dein'))
   " Darwin用プラグイン
   if system('uname') == "Darwin\n"
     call dein#add('ryanoasis/vim-devicons')
+    call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
   endif
 call dein#end()
 
