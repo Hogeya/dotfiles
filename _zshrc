@@ -118,15 +118,23 @@ case ${OSTYPE} in
   cygwin*)
     alias ll='ls --color=auto -l'
     ;;
+  linux*)
+    alias ll='ls --color=auto -l'
+    ;;
 esac
 alias ssh='ssh -F ~/.ssh/config'
 alias scp='scp -F ~/.ssh/config'
+alias todo="todoist"
+alias todo-today='todo l | grep `date "+%y/%m/%d"`'
 
 ########################################################
 #  todoist
 #
 case ${OSTYPE} in
   darwin*)
-    source ~/.zsh/todoist_functions.sh
+    source ~/dotfiles/zsh/todoist_functions.sh
+    ;;
+  linux*)
+    source ~/dotfiles/zsh/todoist_functions.sh
     ;;
 esac
