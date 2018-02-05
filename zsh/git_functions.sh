@@ -13,7 +13,7 @@ function peco-git-add() {
 zle -N peco-git-add
 bindkey "^ga" peco-git-add
 
-function peco-git-branch() {
+function peco-git-checkout() {
   local SELECTED_BRANCH=$(git br -a | sed 's/^\*/ /' | awk '{ print $l }' | peco)
   if [ -n "$SELECTED_BRANCH" ]; then
     BUFFER="git co $SELECTED_BRANCH"
@@ -21,5 +21,5 @@ function peco-git-branch() {
   fi
   zle accept-line
 }
-zle -N peco-git-branch
-bindkey "^gb" peco-git-branch
+zle -N peco-git-checkout
+bindkey "^gc" peco-git-checkout
