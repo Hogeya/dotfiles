@@ -32,6 +32,14 @@ augroup vimrc_loading
   " blade file
   autocmd BufNewFile,BufRead *.blade.php call Cmdbladephp()
 
+" For my Dotfiles repository
+  autocmd BufNewFile,BufRead _gitconfig call Cmdgitconfig()
+  autocmd BufNewFile,BufRead _gitconfig_privacy call Cmdgitconfig()
+  autocmd BufNewFile,BufRead _tmux_conf call Cmdtmuxconf()
+  autocmd BufNewFile,BufRead _vimrc call Cmdvim()
+  autocmd BufNewFile,BufRead _zprofile call Cmdzsh()
+  autocmd BufNewFile,BufRead _zshrc call Cmdzsh()
+
   " add templete
   autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
   autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python_signature.txt
