@@ -132,9 +132,13 @@ alias todo-today='todo l | grep `date "+%y/%m/%d"`'
 #
 case ${OSTYPE} in
   darwin*)
+    source ~/dotfiles/zsh/general_functions.sh
+    source ~/dotfiles/zsh/git_functions.sh
     source ~/dotfiles/zsh/todoist_functions.sh
     ;;
   linux*)
+    source ~/dotfiles/zsh/general_functions.sh
+    source ~/dotfiles/zsh/git_functions.sh
     source ~/dotfiles/zsh/todoist_functions.sh
     ;;
 esac
