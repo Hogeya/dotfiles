@@ -1,3 +1,7 @@
+##############################################
+# todoist functions
+#
+
 # todoist find project
 function peco-todoist-project () {
   local SELECTED_PROJECT="$(todoist projects | peco | head -n1 | cut -d ' ' -f 1)"
