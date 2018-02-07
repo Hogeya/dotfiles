@@ -19,10 +19,10 @@ nnoremap k gk
 noremap ; :
 
 " reload
-nnoremap ,r :<C-u>source $HOME/.vimrc<CR>
+nnoremap <Leader>r :<C-u>source $HOME/.vimrc<CR>
 
 " highlight解除キー
-nnoremap ,h :noh<CR>
+nnoremap <Leader>h :noh<CR>
 
 " 1行ヤンク
 nnoremap Y y$
@@ -36,3 +36,11 @@ nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
 
 " Ctrl-wのキーバインド設定
 nnoremap <Leader>w <C-w>
+
+" copymode用のfunction <Leader>r で元に戻せる
+nnoremap <Leader>v :call Copymode()<CR>
+
+function! Copymode()
+  set nonumber
+  set listchars=
+endfunction
