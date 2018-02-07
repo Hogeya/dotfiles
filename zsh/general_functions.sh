@@ -9,3 +9,11 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+# function peco-select-directory() {
+#   BUFFER="cd $(\ls -d */ | peco)"
+#   CURSOR=$#BUFFER
+#   zle accept-line
+# }
+# zle -N peco-select-directory
+# bindkey '' peco-select-directory
