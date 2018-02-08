@@ -19,7 +19,7 @@ nnoremap k gk
 noremap ; :
 
 " reload
-nnoremap <Leader>r :<C-u>source $HOME/.vimrc<CR>
+nnoremap .r :<C-u>source $HOME/.vimrc<CR>
 
 " highlight解除キー
 nnoremap <Leader>h :noh<CR>
