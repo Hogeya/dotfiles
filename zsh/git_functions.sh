@@ -23,3 +23,14 @@ function peco-git-checkout() {
 }
 zle -N peco-git-checkout
 bindkey "^gc" peco-git-checkout
+
+function peco-git-branch-d() {
+  local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | peco | sed -e "s/\* //g")"
+  if [ -n "$SELECTED_BRANCH" ]; then
+    BUFFER="git br -D $(echo "$SELECTED_BRANCH" | tr '\n' ' ')"
+    CURSOR="$#BUFFER"
+  fi
+  zle accept-line
+}
+zle -N peco-git-branch-d
+bindkey "^gd" peco-git-branch-d
