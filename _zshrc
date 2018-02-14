@@ -128,7 +128,7 @@ alias todo="todoist"
 alias todo-today='todo l | grep `date "+%y/%m/%d"`'
 
 ########################################################
-#  todoist
+#  shell script
 #
 case ${OSTYPE} in
   darwin*)

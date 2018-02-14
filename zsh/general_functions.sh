@@ -28,3 +28,19 @@ function peco-select-ls() {
 }
 zle -N peco-select-ls
 bindkey '^l' peco-select-ls
+
+function peco-tree-vim() {
+  local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
+  if [ -n "$SELECTED_FILE" ]; then
+    if [ -n "$LBUFFER" ]; then
+      local new_left="${LBUFFER%\ } $SELECTED_FILE"
+    else
+      local new_left="$SELECTED_FILE"
+    fi
+    BUFFER="${new_left}${RBUFFER}"
+    CURSOR="${#new_left}"
+  fi
+  zle accept-line
+}
+zle -N peco-tree-vim
+bindkey "^t" peco-tree-vim
