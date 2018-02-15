@@ -14,22 +14,6 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 function peco-select-ls() {
-  local SELECTED_LIST="$(\ls | peco)"
-  if [ -n "$SELECTED_LIST" ]; then
-    if [ -n "$LBUFFER" ]; then
-      local new_left="${LBUFFER%\ } $SELECTED_LIST"
-    else
-      local new_left="$SELECTED_LIST"
-    fi
-    BUFFER=${new_left}${RBUFFER}
-    CURSOR=${#new_left}
-  fi
-  zle accept-line
-}
-zle -N peco-select-ls
-bindkey '^l' peco-select-ls
-
-function peco-tree-vim() {
   local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
   if [ -n "$SELECTED_FILE" ]; then
     if [ -n "$LBUFFER" ]; then
@@ -42,5 +26,5 @@ function peco-tree-vim() {
   fi
   zle accept-line
 }
-zle -N peco-tree-vim
-bindkey "^t" peco-tree-vim
+zle -N peco-select-ls
+bindkey "^l" peco-select-ls
