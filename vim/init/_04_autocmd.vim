@@ -18,6 +18,9 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.vue call Cmdvue()
   autocmd BufNewFile,BufRead *.zsh call Cmdzsh()
 
+  " crontab
+  autocmd BufNewFile,BufRead crontab call Cmdcrontab()
+
   " make file
   autocmd BufNewFile,BufRead Makefile call Cmdmake()
 
@@ -54,6 +57,13 @@ endfunction
 
 function! Cmdcoffee()
   set filetype=coffee
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdcrontab()
+  set filetype=crontab
   set expandtab
   set shiftwidth=2
   set softtabstop=2
