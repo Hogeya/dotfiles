@@ -62,10 +62,10 @@ set-option -g status-position top
 
 # ペインサイズを上下左右に変更
 # Prefix+J,J,J,.....と連打でリサイズできるようにする
-bind h resize-pane -L 5
-bind j resize-pane -D 5
-bind k resize-pane -U 5
-bind l resize-pane -R 5
+bind h resize-pane -L 3
+bind j resize-pane -D 3
+bind k resize-pane -U 3
+bind l resize-pane -R 3
 
 # セッション切り替えキーバインド
 bind N switch-client -n
