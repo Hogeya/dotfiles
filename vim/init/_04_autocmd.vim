@@ -8,6 +8,7 @@ augroup vimrc_loading
   autocmd Bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd BufNewFile,BufRead *.coffee call Cmdcoffee()
   autocmd BufNewFile,BufRead *.ejs call Cmdejs()
+  autocmd BufNewFile,BufRead *.go call Cmdgo()
   autocmd BufNewFile,BufRead *.html call Cmdhtml()
   autocmd BufNewFile,BufRead *.less call Cmdless()
   autocmd BufNewFile,BufRead *.md call Cmdmd()
@@ -85,6 +86,13 @@ endfunction
 
 function! Cmdgitconfig()
   set filetype=gitconfig
+  set expandtab
+  set shiftwidth=2
+  set softtabstop=2
+endfunction
+
+function! Cmdgo()
+  set filetype=go
   set expandtab
   set shiftwidth=2
   set softtabstop=2
