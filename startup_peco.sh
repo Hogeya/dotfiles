@@ -12,6 +12,6 @@ tar -xzf peco_linux_amd64.tar.gz
 sudo tar xzvf peco_linux_amd64.tar.gz
 cd peco_linux_amd64
 sudo chmod +x peco
-sudo cp /usr/local/bin
+sudo cp peco /usr/local/bin
 
 # peco --version
