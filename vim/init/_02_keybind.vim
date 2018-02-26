@@ -40,6 +40,9 @@ nnoremap <Leader>w <C-w>
 " copymode用のfunction <Leader>r で元に戻せる
 nnoremap <Leader>v :call Copymode()<CR>
 
+" Splash
+nnoremap <Leader>s :Splash ./src/vim_intro.txt<CR>
+
 function! Copymode()
   set nonumber
   set listchars=
