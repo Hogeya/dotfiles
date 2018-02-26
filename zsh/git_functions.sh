@@ -8,7 +8,6 @@ function peco-git-add() {
     CURSOR="$#BUFFER"
   fi
   zle accept-line
-  # zle clear-screen
 }
 zle -N peco-git-add
 bindkey "^ga" peco-git-add
