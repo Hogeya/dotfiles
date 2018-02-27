@@ -13,7 +13,6 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('Shougo/neocomplcache.vim')
   call dein#add('Shougo/unite.vim')
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('fatih/vim-go')
   call dein#add('groenewege/vim-less')
   call dein#add('itchyny/lightline.vim')
   call dein#add('jistr/vim-nerdtree-tabs')
@@ -31,6 +30,10 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('tpope/vim-fugitive')
   call dein#add('twitvim/twitvim')
   call dein#add('tyru/open-browser.vim')
+  " version依存 #vim7.4.16以上
+  if v:version > 740
+    call dein#add('fatih/vim-go')
+  endif
   " Darwin用プラグイン
   if system('uname') == "Darwin\n"
     call dein#add('ryanoasis/vim-devicons')
