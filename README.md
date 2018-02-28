@@ -14,6 +14,7 @@ Manage dotfiles Repository
   - peco 0.5.1
   - tmux 2.6
   - todoist 0.10.1
+  - tree 1.7.0
   - vim 8.0
   - zsh 5.3
 
