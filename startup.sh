@@ -1,8 +1,6 @@
 # 2017-10-07
 # Please start up with zsh
 
-# echo Maintan Now
-
 echo Start make vim libraly
 
 home=$HOME
