@@ -40,13 +40,11 @@ echo Start make Symlinks at HOME
 # シムリンクを作成する
 cd $HOME
 ln -sf $HOME/dotfiles/_gitconfig .gitconfig
-ln -sf $HOME/dotfiles/_netrc .netrc
 ln -sf $HOME/dotfiles/_tmux_conf .tmux.conf
 ln -sf $HOME/dotfiles/_vimrc .vimrc
 ln -sf $HOME/dotfiles/_zprofile .zprofile
 ln -sf $HOME/dotfiles/_zshrc .zshrc
+cp ~/dotfiles/_netrc ~/.netrc
 cp ~/dotfiles/_gitconfig_privacy ~/.gitconfig.privacy
-# TODO 入力した値をうまいこと.gitconfig.privacyに反映できるようにする
-vim ~/.gitconfig.privacy
 
 echo DONE!!
