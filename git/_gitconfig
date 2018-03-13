@@ -9,30 +9,43 @@
 [color]
   ui = true
 
+[push]
+  default = simple
+
+[user]
+  # localに登録させるようにする
+
 [alias]
-  alias = config --get-regexp \"alias.*\"
-  am = commit --amend
+
+  # 省略
+  alias = config --get-regexp \"alias.*\" #aliasを表示
   br = branch
   bra = branch -a -vvv
   co = checkout
   cu = name-rev --name-only HEAD
-  cm = commit -m
   di = diff
   fe = fetch --prune --all
-  fed = !git fe && git delete-merged-branches
-  st = status
+  m-dev = !git merge origin/develop # developブランチのマージ
   pop = stash pop
+  st = status
+  tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset' # commitログを見やすく表示
 
-  co-b-today = !git co -b $(date "+%Y-%m-%d")
-  co-today = !git co $(date "+%Y-%m-%d")
-  delete-merged-branches = !git br --merged | grep -vE 'develop$|master$' | xargs -I % git br -D %
-  merge-dev = !git merge origin/develop
-  merge-master = !git merge origin/master
-  merge-today = !git merge origin/$(date "+%Y-%m-%d")
-  push-cu = !git push -u origin `git cu`
-  push-fcu = !git push -uf origin `git cu`
+  # Dotfiles用
+  co-b-today = !git checkout -b $(date "+%Y-%m-%d")
+  co-today = !git checkout $(date "+%Y-%m-%d")
+  m-today = !git merge origin/$(date "+%Y-%m-%d")
 
-[push]
-  default = simple
-[user]
-	name = TakatsuguYoneya
+  # merge済ブランチの削除
+  delete-merged-br = !git branch --merged | grep -vE 'develop$|master$' | xargs -I % git branch -D %
+
+  # リモートブランチとローカルブランチを最新の状態にし、マージ済みブランチを削除する
+  flash = !git fetch --prume --all && git pull --rebase && git branch --merged | grep -vE 'develop$|master$' | xargs -I % git branch -D %
+
+  # 最新ブランチの情報を表示
+  now = !git fetch --prume --all && git branch -vv && git status
+
+  # currentブランチをpush
+  push-cu = !git push -u origin `git name-rev --name-only HEAD`
+
+  # currentブランチをfpush
+  push-fcu = !git push -uf origin `git name-rev --name-only HEAD`
