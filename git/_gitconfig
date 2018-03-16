@@ -26,6 +26,7 @@
   di = diff
   fe = fetch --prune --all
   m-dev = !git merge origin/develop # developブランチのマージ
+  m-mas = !git merge origin/master # masterブランチのマージ
   pop = stash pop
   st = status
   tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset' # commitログを見やすく表示
