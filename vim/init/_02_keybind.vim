@@ -41,7 +41,7 @@ nnoremap <Leader>w <C-w>
 nnoremap <Leader>v :call Copymode()<CR>
 
 " Splash
-nnoremap <Leader>s :Splash ./src/vim_intro.txt<CR>
+nnoremap <Leader>s :Splash $HOME/dotfiles/src/vim_intro.txt<CR>
 
 function! Copymode()
   set nonumber
