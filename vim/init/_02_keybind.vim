@@ -15,6 +15,23 @@ nnoremap <Leader>e gT
 nnoremap j gj
 nnoremap k gk
 
+" 水平分割
+nnoremap ss :split<CR>
+
+" 垂直分割
+nnoremap vs :vsplit<CR>
+
+" 幅増減
+nnoremap s> <Leader>w>
+nnoremap s< <Leader>w<
+
+" 高さ増減
+nnoremap s+ <Leader>w+
+nnoremap s- <Leader>w-
+
+" 新規タブ
+nnoremap <Leader>t :tabnew<CR>
+
 " 英字キーボードに合わせてコロンとセミコロンを入れ替える
 noremap ; :
 
