@@ -4,7 +4,7 @@
 " NERDTREEの設定
 "
 " Leader + t でTreeを開けるようにする
-nnoremap <silent><Leader>t :NERDTreeTabsToggle<CR>
+nnoremap <silent><Leader>nt :NERDTreeTabsToggle<CR>
 
 " vim起動時にconsoleをスタートアップ
 " let g:nerdtree_tabs_open_on_console_startup = 1
