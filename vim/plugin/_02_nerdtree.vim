@@ -7,7 +7,7 @@
 nnoremap <silent><Leader>t :NERDTreeTabsToggle<CR>
 
 " vim起動時にconsoleをスタートアップ
-let g:nerdtree_tabs_open_on_console_startup = 1
+" let g:nerdtree_tabs_open_on_console_startup = 1
 
 " 隠しファイルを表示
 let NERDTreeShowHidden = 1
