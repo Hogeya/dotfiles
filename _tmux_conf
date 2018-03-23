@@ -1,5 +1,5 @@
 # prefixを設定
-set-option -g prefix C-x
+set-option -g prefix C-z
 
 # pane表示時間を伸ばす
 set-option -g display-panes-time 10000
