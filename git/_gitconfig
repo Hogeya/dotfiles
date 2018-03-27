@@ -30,6 +30,7 @@
   pop = stash pop
   st = status
   tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset' # commitログを見やすく表示
+  l-one = log --oneline
 
   # Dotfiles用
   co-b-today = !git checkout -b $(date "+%Y-%m-%d")
@@ -40,7 +41,7 @@
   delete-merged-br = !git branch --merged | grep -vE 'develop$|master$' | xargs -I % git branch -D %
 
   # リモートブランチとローカルブランチを最新の状態にし、マージ済みブランチを削除する
-  flash = !git fetch --prume --all && git pull --rebase && git branch --merged | grep -vE 'develop$|master$' | xargs -I % git branch -D %
+  flash = !git fetch --prune --all && git pull --rebase && git branch --merged | grep -vE 'develop$|master$' | xargs -I % git branch -D %
 
   # 最新ブランチの情報を表示
   now = !git fetch --prume --all && git branch -vv && git status
