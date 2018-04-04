@@ -76,15 +76,13 @@ function zle-line-init zle-keymap-select {
   case $KEYMAP in
     vicmd)
 PROMPT='%{${reset_color}%}
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %{${reset_color}%} %~ % 
--- NORMAL -- %{${reset_color}%} 
+%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}]%{${reset_color}%}[-- NORMAL --]%{${reset_color}%} %~ % 
 $ '
 RPROMPT='%{${reset_color}%} %*'
 ;;
     main|viins)
 PROMPT='%{${reset_color}%}
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %{${reset_color}%} %~ % 
-%{${fg[cyan]}%}-- INSERT -- %{${reset_color}%} 
+%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}][%{${fg[cyan]}%}-- INSERT --%{${reset_color}%}] %~ %  
 $ '
 RPROMPT='%{${reset_color}%} %*'
 ;;
