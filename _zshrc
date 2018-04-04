@@ -72,10 +72,27 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 # プロンプト表示直前にvcs_info呼び出し
 precmd() { vcs_info }
 
+function zle-line-init zle-keymap-select {
+  case $KEYMAP in
+    vicmd)
 PROMPT='%{${reset_color}%}
 %{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %{${reset_color}%} %~ % 
+-- NORMAL -- %{${reset_color}%} 
 $ '
 RPROMPT='%{${reset_color}%} %*'
+;;
+    main|viins)
+PROMPT='%{${reset_color}%}
+%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %{${reset_color}%} %~ % 
+%{${fg[cyan]}%}-- INSERT -- %{${reset_color}%} 
+$ '
+RPROMPT='%{${reset_color}%} %*'
+;;
+  esac
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 #########################################################
 # OPTIONS
