@@ -24,6 +24,7 @@ esac
 # zle -N zle-line-init
 ## 「-azfu-」を表示させないための記述
 # zstyle ':auto-fu:var' postdisplay $''
+source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
 
 ########################################################
 # BASE SETTING
@@ -83,6 +84,12 @@ RPROMPT='%{${reset_color}%} %*'
     main|viins)
 PROMPT='%{${reset_color}%}
 %{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}][%{${fg[cyan]}%}-- INSERT --%{${reset_color}%}] %~ %  
+$ '
+RPROMPT='%{${reset_color}%} %*'
+;;
+    vivis|vivli)
+PROMPT='%{${reset_color}%}
+%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}][%{${fg[magenta]}%}-- VISUAL --%{${reset_color}%}] %~ %  
 $ '
 RPROMPT='%{${reset_color}%} %*'
 ;;
