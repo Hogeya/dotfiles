@@ -99,8 +99,8 @@ function zle-line-init zle-keymap-select zle-line-finish
   esac
 
 PROMPT="
-%{${bg[green]}%} %n % %{${reset_color}%}[${vcs_info_msg_0_}] %~ %  
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%} > "
+%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %~ %  
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%}> "
 RPROMPT='%{${reset_color}%} %*'
   zle reset-prompt
 }
