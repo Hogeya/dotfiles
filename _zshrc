@@ -100,7 +100,7 @@ function zle-line-init zle-keymap-select zle-line-finish
   esac
 
 PROMPT=$'
-%{\e[30;48;5;25m%}%{\e[38;5;15m%} %n (%~) %{\e[0m%}%{\e[30;48;5;236m%} ${vcs_info_msg_0_} %{\e[0m%}
+%{\e[30;48;5;73m%}%{\e[38;5;15m%} %n (%~) %{\e[0m%}%{\e[30;48;5;236m%} ${vcs_info_msg_0_} %{\e[0m%}
 %{$terminfo_down_sc$VIMODE$terminfo[rc]%}$ '
 RPROMPT='%{${reset_color}%} %*'
   zle reset-prompt
