@@ -74,6 +74,11 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 
 # プロンプト表示直前にvcs_info呼び出し
 precmd() { vcs_info }
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '$fg[yellow]!'
+zstyle ':vcs_info:git:*' unstagedstr '$fg[red]+'
+zstyle ':vcs_info:*' formats '$fg[green]%c%u[%b]%f'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 # vimodeの表示設定
 autoload -Uz terminfo
@@ -94,13 +99,13 @@ function zle-line-init zle-keymap-select zle-line-finish
       VIMODE='$fg[cyan]-- INSERT --$reset_color'
       ;;
     vivis|vivli)
-      VIMODE='$fg[magenta]-- VISUA --$reset_color'
+      VIMODE='$fg[magenta]-- VISUAL --$reset_color'
       ;;
   esac
 
 PROMPT="
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}] %~ %  
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%}> "
+%{${fg[green]}%}* %n (%~)%{${reset_color}%}  >  ${vcs_info_msg_0_} 
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%}$ "
 RPROMPT='%{${reset_color}%} %*'
   zle reset-prompt
 }
