@@ -7,7 +7,10 @@
   editor = vim
 
 [color]
-  ui = true
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
 
 [push]
   default = simple
