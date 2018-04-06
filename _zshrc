@@ -68,16 +68,12 @@ autoload -Uz vcs_info
 #PROMPT変数内で変数を参照する
 setopt prompt_subst
 
-# vcsの表示
-zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
-zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
-
 # プロンプト表示直前にvcs_info呼び出し
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr '$fg[yellow]!'
-zstyle ':vcs_info:git:*' unstagedstr '$fg[red]+'
-zstyle ':vcs_info:*' formats '$fg[green]%c%u[%b]%f'
+zstyle ':vcs_info:git:*' stagedstr $'%{\e[38;5;226m%}!'
+zstyle ':vcs_info:git:*' unstagedstr $'%{\e[38;5;196m%}+'
+zstyle ':vcs_info:*' formats $'%{\e[38;5;51m%}%c%u[%b]%f'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 # vimodeの表示設定
@@ -93,19 +89,19 @@ function zle-line-init zle-keymap-select zle-line-finish
 {
   case $KEYMAP in
     vicmd)
-      VIMODE='-- NORMAL --'
+      VIMODE=$'%{\e[38;5;14m%}-- NORMAL --%{\e[m%}'
       ;;
     main|viins)
-      VIMODE='$fg[cyan]-- INSERT --$reset_color'
+      VIMODE=$'%{\e[38;5;82m%}-- INSERT --%{\e[m%}'
       ;;
     vivis|vivli)
-      VIMODE='$fg[magenta]-- VISUAL --$reset_color'
+      VIMODE=$'%{\e[38;5;208m%}-- VISUAL --%{\e[m%}'
       ;;
   esac
 
-PROMPT="
-%{${fg[green]}%}* %n (%~)%{${reset_color}%}  >  ${vcs_info_msg_0_} 
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%}$ "
+PROMPT=$'
+%{\e[38;5;9m%}%n (%~)%{\e[m%}  >  ${vcs_info_msg_0_} 
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%}$ '
 RPROMPT='%{${reset_color}%} %*'
   zle reset-prompt
 }
