@@ -22,8 +22,10 @@ esac
 #   auto-fu-init
 # }
 # zle -N zle-line-init
+
 ## 「-azfu-」を表示させないための記述
 # zstyle ':auto-fu:var' postdisplay $''
+
 source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
 
 ########################################################
@@ -73,31 +75,39 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 # プロンプト表示直前にvcs_info呼び出し
 precmd() { vcs_info }
 
-function zle-line-init zle-keymap-select {
+# vimodeの表示設定
+autoload -Uz terminfo
+
+terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
+left_down_prompt_preexec() {
+    print -rn -- $terminfo[el]
+}
+add-zsh-hook preexec left_down_prompt_preexec
+
+function zle-line-init zle-keymap-select zle-line-finish
+{
   case $KEYMAP in
     vicmd)
-PROMPT='%{${reset_color}%}
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}]%{${reset_color}%}[-- NORMAL --]%{${reset_color}%} %~ % 
-$ '
-RPROMPT='%{${reset_color}%} %*'
-;;
+      VIMODE='-- NORMAL --'
+      ;;
     main|viins)
-PROMPT='%{${reset_color}%}
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}][%{${fg[cyan]}%}-- INSERT --%{${reset_color}%}] %~ %  
-$ '
-RPROMPT='%{${reset_color}%} %*'
-;;
+      VIMODE='$fg[cyan]-- INSERT --$reset_color'
+      ;;
     vivis|vivli)
-PROMPT='%{${reset_color}%}
-%{${bg[green]}%} %n % %{${reset_color}%} [${vcs_info_msg_0_}][%{${fg[magenta]}%}-- VISUAL --%{${reset_color}%}] %~ %  
-$ '
-RPROMPT='%{${reset_color}%} %*'
-;;
+      VIMODE='$fg[magenta]-- VISUA --$reset_color'
+      ;;
   esac
+
+PROMPT="
+%{${bg[green]}%} %n % %{${reset_color}%}[${vcs_info_msg_0_}] %~ %  
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%} > "
+RPROMPT='%{${reset_color}%} %*'
   zle reset-prompt
 }
 zle -N zle-line-init
+zle -N zle-line-finish
 zle -N zle-keymap-select
+zle -N edit-command-line
 
 #########################################################
 # OPTIONS
