@@ -95,7 +95,7 @@ function zle-line-init zle-keymap-select zle-line-finish
       VIMODE=$'%{\e[38;5;76m%}-- INSERT --%{\e[m%}'
       ;;
     vivis|vivli)
-      VIMODE=$'%{\e[38;5;208m%}%{\e[38;5;15m%}-- VISUAL --%{\e[m%}'
+      VIMODE=$'%{\e[38;5;208m%}-- VISUAL --%{\e[m%}'
       ;;
   esac
 
