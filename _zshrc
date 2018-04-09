@@ -63,9 +63,13 @@ autoload -Uz add-zsh-hook
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+########################################################
+# PROMPT SETTING
+
 # VCS情報の表示を有効
 autoload -Uz vcs_info
-#PROMPT変数内で変数を参照する
+
+# PROMPT変数内で変数を参照する
 setopt prompt_subst
 
 # プロンプト表示直前にvcs_info呼び出し
@@ -79,6 +83,7 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 # vimodeの表示設定
 autoload -Uz terminfo
 
+# 表示位置を入力下部に
 terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
 left_down_prompt_preexec() {
     print -rn -- $terminfo[el]
