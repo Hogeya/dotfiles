@@ -25,6 +25,9 @@ bind r source-file ~/.tmux.conf \; display "RELOADED!"
 # 256色端末を使用する
 set-option -g default-terminal "screen-256color"
 
+# カーソル移動のキーマッピングをvimにする
+set-window-option -g mode-keys vi
+
 # ステータスバーの設定
 set-option -g status-fg white
 set-option -g status-bg colour008
