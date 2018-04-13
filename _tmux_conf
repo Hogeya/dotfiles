@@ -28,6 +28,11 @@ set-option -g default-terminal "screen-256color"
 # カーソル移動のキーマッピングをvimにする
 set-window-option -g mode-keys vi
 
+# クリップボードにコピーさせる
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "cat > /dev/clipboard" # TODO Darwinにも対応させる
+
 # ステータスバーの設定
 set-option -g status-fg white
 set-option -g status-bg colour008
