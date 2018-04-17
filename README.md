@@ -12,6 +12,7 @@ Manage dotfiles Repository
   - git 2.15.1
   - go 1.9.2
   - peco 0.5.1
+  - reattach-to-user-namespace 2.6
   - tmux 2.6
   - todoist 0.10.1
   - tree 1.7.0
