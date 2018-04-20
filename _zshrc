@@ -149,7 +149,6 @@ setopt share_history
 
 ########################################################
 #  ALIAS
-#
 
 case ${OSTYPE} in
   darwin*)
@@ -169,7 +168,7 @@ alias todo-today='todo l | grep `date "+%y/%m/%d"`'
 
 ########################################################
 #  shell script
-#
+
 case ${OSTYPE} in
   darwin*)
     source ~/dotfiles/zsh/general_functions.sh
