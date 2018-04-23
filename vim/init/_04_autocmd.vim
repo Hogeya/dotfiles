@@ -6,121 +6,50 @@
 augroup vimrc_loading
   autocmd!
   autocmd Bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd BufNewFile,BufRead *.coffee call Cmdcoffee()
-  autocmd BufNewFile,BufRead *.ejs call Cmdejs()
-  autocmd BufNewFile,BufRead *.go call Cmdgo()
-  autocmd BufNewFile,BufRead *.html call Cmdhtml()
-  autocmd BufNewFile,BufRead *.less call Cmdless()
-  autocmd BufNewFile,BufRead *.md call Cmdmd()
+  autocmd BufNewFile,BufRead *.coffee call CmdDefault() | set filetype=coffee
+  autocmd BufNewFile,BufRead *.ejs call CmdDefault() | set filetype=ejs
+  autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
+  autocmd BufNewFile,BufRead *.html call CmdDefault | set filetype=html
+  autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
+  autocmd BufNewFile,BufRead *.md call CmdDefault() | set filetype=markdown
   autocmd BufNewFile,BufRead *.php call Cmdphp()
-  autocmd BufNewFile,BufRead *.py call Cmdpython()
-  autocmd BufNewFile,BufRead *.sh call Cmdsh()
-  autocmd BufNewFile,BufRead *.vim call Cmdvim()
-  autocmd BufNewFile,BufRead *.vue call Cmdvue()
-  autocmd BufNewFile,BufRead *.zsh call Cmdzsh()
+  autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
+  autocmd BufNewFile,BufRead *.sh call CmdDefault() | set filetype=sh
+  autocmd BufNewFile,BufRead *.vim call CmdDefault() | set filetype=vim
+  autocmd BufNewFile,BufRead *.vue call CmdDefault() | set filetype=vue
+  autocmd BufNewFile,BufRead *.zsh call CmdDefault() | set filetype=zsh
 
   " crontab
-  autocmd BufNewFile,BufRead crontab call Cmdcrontab()
+  autocmd BufNewFile,BufRead crontab call CmdDefault() | set filetype=crontab
 
   " make file
-  autocmd BufNewFile,BufRead Makefile call Cmdmake()
+  autocmd BufNewFile,BufRead Makefile call CmdDefault() | set filetype=make
 
   " dotfiles
-  autocmd BufNewFile,BufRead .env call Cmdenv()
-  autocmd BufNewFile,BufRead .env.* call Cmdenv()
-  autocmd BufNewFile,BufRead .gitconfig call Cmdgitconfig()
-  autocmd BufNewFile,BufRead .tmux.conf call Cmdtmuxconf()
-  autocmd BufNewFile,BufRead .vimrc call Cmdvim()
-  autocmd BufNewFile,BufRead .zshrc call Cmdzsh()
+  autocmd BufNewFile,BufRead .env call CmdDefault() | set filetype=sh
+  autocmd BufNewFile,BufRead .env.* call CmdDefault() | set filetype=sh
+  autocmd BufNewFile,BufRead .gitconfig call CmdDefault() | set filetype=gitconfig
+  autocmd BufNewFile,BufRead .tmux.conf call CmdDefault() | set filetype=tmux
+  autocmd BufNewFile,BufRead .vimrc call CmdDefault() | set filetype=vim
+  autocmd BufNewFile,BufRead .zshrc call CmdDefault() | set filetype=zsh
 
   " blade file
-  autocmd BufNewFile,BufRead *.blade.php call Cmdbladephp()
+  autocmd BufNewFile,BufRead *.blade.php call CmdDefault() | set filetype=blade
 
 " For my Dotfiles repository
-  autocmd BufNewFile,BufRead _gitconfig call Cmdgitconfig()
-  autocmd BufNewFile,BufRead _gitconfig_privacy call Cmdgitconfig()
-  autocmd BufNewFile,BufRead _tmux_conf call Cmdtmuxconf()
-  autocmd BufNewFile,BufRead _vimrc call Cmdvim()
-  autocmd BufNewFile,BufRead _zprofile call Cmdzsh()
-  autocmd BufNewFile,BufRead _zshrc call Cmdzsh()
+  autocmd BufNewFile,BufRead _gitconfig call CmdDefault() | set filetype=gitconfig
+  autocmd BufNewFile,BufRead _gitconfig_privacy call CmdDefault() | set filetype=gitconfig
+  autocmd BufNewFile,BufRead _tmux_conf call CmdDefault() | set filetype=tmux
+  autocmd BufNewFile,BufRead _vimrc call CmdDefault() | set filetype=vim
+  autocmd BufNewFile,BufRead _zprofile call CmdDefault() | set filetype=zsh
+  autocmd BufNewFile,BufRead _zshrc call CmdDefault() | set filetype=zsh
 
   " add templete
   autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
   autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python_signature.txt
 augroup END
 
-function! Cmdbladephp()
-  set filetype=blade
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdcoffee()
-  set filetype=coffee
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdcrontab()
-  set filetype=crontab
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdejs()
-  set filetype=ejs
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdenv()
-  set filetype=sh
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdgitconfig()
-  set filetype=gitconfig
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdgo()
-  set filetype=go
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdless()
-  set filetype=less
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdhtml()
-  set filetype=html
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdmake()
-  set filetype=make
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdmd()
-  set filetype=markdown
+function! CmdDefault()
   set expandtab
   set shiftwidth=2
   set softtabstop=2
@@ -131,46 +60,4 @@ function! Cmdphp()
   set noexpandtab
   set shiftwidth=4
   set softtabstop=4
-endfunction
-
-function! Cmdpython()
-  set filetype=python
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdsh()
-  set filetype=sh
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdtmuxconf()
-  set filetype=tmux
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdvim()
-  set filetype=vim
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdvue()
-  set filetype=vue
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
-endfunction
-
-function! Cmdzsh()
-  set filetype=zsh
-  set expandtab
-  set shiftwidth=2
-  set softtabstop=2
 endfunction
