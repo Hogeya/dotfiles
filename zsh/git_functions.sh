@@ -10,7 +10,7 @@ function peco-git-add() {
   zle accept-line
 }
 zle -N peco-git-add
-bindkey "^ga" peco-git-add
+bindkey " ga" peco-git-add
 
 function peco-git-checkout() {
   local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | peco | sed -e "s/\* //g")"
@@ -21,7 +21,7 @@ function peco-git-checkout() {
   zle accept-line
 }
 zle -N peco-git-checkout
-bindkey "^gc" peco-git-checkout
+bindkey " gc" peco-git-checkout
 
 function peco-git-branch-d() {
   local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | peco | sed -e "s/\* //g")"
@@ -32,4 +32,4 @@ function peco-git-branch-d() {
   zle accept-line
 }
 zle -N peco-git-branch-d
-bindkey "^gd" peco-git-branch-d
+bindkey " gd" peco-git-branch-d
