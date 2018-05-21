@@ -28,6 +28,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead .gitconfig call CmdDefault() | set filetype=gitconfig
   autocmd BufNewFile,BufRead .tmux.conf call CmdDefault() | set filetype=tmux
   autocmd BufNewFile,BufRead .vimrc call CmdDefault() | set filetype=vim
+  autocmd BufNewFile,BufRead .zshenv call CmdDefault() | set filetype=zsh
   autocmd BufNewFile,BufRead .zshrc call CmdDefault() | set filetype=zsh
 
   " For my Dotfiles repository

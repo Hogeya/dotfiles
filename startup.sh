@@ -47,6 +47,7 @@ ln -sf $HOME/dotfiles/_tmux_conf .tmux.conf
 ln -sf $HOME/dotfiles/_vimrc .vimrc
 ln -sf $HOME/dotfiles/_zprofile .zprofile
 ln -sf $HOME/dotfiles/_zshrc .zshrc
+ln -sf $HOME/dotfiles/_zshenv .zshenv
 cp ~/dotfiles/_netrc ~/.netrc
 cp ~/dotfiles/git/_gitconfig_privacy ~/.gitconfig.privacy
 

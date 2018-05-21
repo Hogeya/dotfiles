@@ -63,6 +63,9 @@ autoload -Uz add-zsh-hook
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+# 環境変数を読み込み
+source ~/.zshenv
+
 ########################################################
 # PROMPT SETTING
 
