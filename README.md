@@ -9,6 +9,7 @@ Manage dotfiles Repository
 
 - Install
   - cowsay 1.07 (Joke tool)
+  - coreutils 8.29
   - git 2.15.1
   - go 1.9.2
   - peco 0.5.1
