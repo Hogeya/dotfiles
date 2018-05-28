@@ -12,15 +12,6 @@ let g:unite_source_file_mru_limit=200
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
-" grep検索
-nnoremap <silent> <Leader>ug  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" カーソル位置の単語をgrep検索
-nnoremap <silent> <Leader>ucg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-" grep検索結果の再呼出
-nnoremap <silent> <Leader>ur  :<C-u>UniteResume search-buffer<CR>
-
 " ウィンドウを分割して開く
 au Filetype unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
 au Filetype unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
@@ -29,6 +20,12 @@ au Filetype unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split
 au filetype unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au filetype unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+" grep検索
+nnoremap <silent> <Leader>ug  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> <Leader>ucg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> <Leader>ur  :<C-u>UniteResume search-buffer<CR>
 " バッファ一覧
 noremap <Leader>ub :Unite buffer<CR>
 " ファイル一覧
