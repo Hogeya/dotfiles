@@ -10,7 +10,7 @@ endif
 set runtimepath+=~/.vim/dein/dein.vim
 call dein#begin(expand('~/.vim/dein'))
   call dein#add('Shougo/dein.vim')
-  call dein#add('Shougo/neocomplcache.vim')
+  call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/vimproc', {'build': 'make'})
