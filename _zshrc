@@ -16,16 +16,6 @@ esac
 #########################################################
 # plugins
 
-## ZSH補完の呼び出し
-# source ~/.zsh/auto-fu.zsh/auto-fu.zsh
-# function zle-line-init(){
-#   auto-fu-init
-# }
-# zle -N zle-line-init
-
-## 「-azfu-」を表示させないための記述
-# zstyle ':auto-fu:var' postdisplay $''
-
 source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
 
 ########################################################
@@ -165,8 +155,6 @@ case ${OSTYPE} in
 esac
 alias ssh='ssh -F ~/.ssh/config'
 alias scp='scp -F ~/.ssh/config'
-alias todo="todoist"
-alias todo-today='todo l | grep `date "+%y/%m/%d"`'
 
 ########################################################
 #  shell script
