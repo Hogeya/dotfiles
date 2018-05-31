@@ -17,6 +17,7 @@ esac
 # plugins
 
 source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 ########################################################
 # BASE SETTING
