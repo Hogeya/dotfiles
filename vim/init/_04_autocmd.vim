@@ -11,6 +11,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
   autocmd BufNewFile,BufRead *.html call CmdDefault | set filetype=html
   autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
+  autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
   autocmd BufNewFile,BufRead *.md call CmdDefault() | set filetype=markdown
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
