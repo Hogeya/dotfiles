@@ -1,5 +1,9 @@
+# author: Takatsugu Yoneya
 # 2017-10-07
-# Please start up with zsh
+if ! type "brew" > /dev/null; then
+  brew install coreutiles cowsay go peco reattach-to-user-namespace the_silver_searcher tree zsh
+  brew reinstall vim --with-lua
+fi
 
 echo Start make vim libraly
 
