@@ -4,7 +4,10 @@
 --     ** window management **
 -- -------------------------------------
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "Right", function()
+local mash = {"shift", "alt", "cmd"}
+local mash_app = {"shift", "alt"}
+
+hs.hotkey.bind(mash, "L", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -17,7 +20,7 @@ hs.hotkey.bind({"cmd", "alt", "shift"}, "Right", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "Left", function()
+hs.hotkey.bind(mash, "H", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -30,7 +33,7 @@ hs.hotkey.bind({"cmd", "alt", "shift"}, "Left", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "Up", function()
+hs.hotkey.bind(mash, "K", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -43,7 +46,7 @@ hs.hotkey.bind({"cmd", "alt", "shift"}, "Up", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "Down", function()
+hs.hotkey.bind(mash, "J", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -56,23 +59,22 @@ hs.hotkey.bind({"cmd", "alt", "shift"}, "Down", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "M", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+hs.hotkey.bind(mash, "M", hs.grid.maximizeWindow)
 
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h
-  win:setFrame(f)
+-- multi monitor
+hs.hotkey.bind(mash, "Right", function()
+  hs.grid.pushWindowNextScreen()
+  hs.grid.maximizeWindow()
+end)
+
+hs.hotkey.bind(mash, "Left", function()
+  hs.grid.pushWindowPrevScreen()
+  hs.grid.maximizeWindow()
 end)
 
 -- -------------------------------------
 --     ** application management **
 -- -------------------------------------
-
 
 -- -------------------------------------
 --        ** debug management **
@@ -94,7 +96,7 @@ end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 -- Well, sometimes auto-reload is not working, you know u.u
-hs.hotkey.bind({"cmd", "alt", "shift"}, "R", function()
+hs.hotkey.bind(mash, "R", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")

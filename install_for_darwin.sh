@@ -1,9 +1,20 @@
 # author: Takatsugu Yoneya
-# 2017-10-07
-if ! type "brew" > /dev/null; then
-  brew install coreutiles cowsay go peco reattach-to-user-namespace the_silver_searcher tree zsh
-  brew reinstall vim --with-lua
-fi
+# 2018-6-6
+
+# Homebrew install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install modules
+brew update
+brew install coreutils
+brew install cowsay
+brew install go
+brew install peco
+brew install reattach-to-user-namespace
+brew install tmux
+brew install tree
+brew install zsh
+brew isntall the_shilver_searcher
 
 echo Start make vim libraly
 
@@ -59,7 +70,7 @@ ln -sf $HOME/dotfiles/peco/config.json .peco/config.json
 ln -sf $HOME/dotfiles/_vimrc .vimrc
 ln -sf $HOME/dotfiles/_zprofile .zprofile
 ln -sf $HOME/dotfiles/_zshrc .zshrc
-ln -sf $HOME/dotfiles/_zshenv .zshenv
+cp ~/dotfiles/_zshenv ~/.zshenv
 cp ~/dotfiles/_netrc ~/.netrc
 cp ~/dotfiles/git/_gitconfig_privacy ~/.gitconfig.privacy
 
