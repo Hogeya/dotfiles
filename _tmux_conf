@@ -66,7 +66,7 @@ set-option -g message-attr bright
 # ステータスバー
 set-option -g status-left-length 90
 set-option -g status-right-length 90
-set-option -g status-left " "
+set-option -g status-left "#[fg=colour222] (--;) "
 set-option -g status-right "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P  #(wifi) #(battery --tmux) #[fg=white][%Y-%m-%d %H:%M]"
 set-option -g status-interval 1
 set-option -g status-justify left
@@ -76,14 +76,30 @@ set-option -g status-position top
 
 # ペインサイズを上下左右に変更
 # Prefix+J,J,J,.....と連打でリサイズできるようにする
-bind h resize-pane -L 3
-bind j resize-pane -D 3
-bind k resize-pane -U 3
-bind l resize-pane -R 3
+unbind h
+unbind j
+unbind k
+unbind l
+bind h resize-pane -L 5
+bind j resize-pane -D 5
+bind k resize-pane -U 5
+bind l resize-pane -R 5
+
+# window切り替えキーバインド
+unbind ]
+unbind [
+bind ] next-window
+bind [ previous-window
 
 # セッション切り替えキーバインド
-bind N switch-client -n
-bind P switch-client -p
+unbind p
+unbind o
+bind p switch-client -n
+bind o switch-client -p
+
+# kill-window
+unbind k
+bind k confirm-before "kill-window"
 
 # List Of plugins
 set -g @plugin 'tmux-plugins/tpm'
