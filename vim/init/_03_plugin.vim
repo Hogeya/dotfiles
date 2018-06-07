@@ -25,10 +25,12 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('plasticboy/vim-markdown')
   call dein#add('posva/vim-vue')
   call dein#add('rhysd/accelerated-jk')
+  call dein#add('ryanoasis/vim-devicons')
   call dein#add('scrooloose/nerdtree')
   call dein#add('scrooloose/syntastic')
   call dein#add('thinca/vim-quickrun')
   call dein#add('thinca/vim-splash')
+  call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
   call dein#add('tmux-plugins/vim-tmux')
   call dein#add('tpope/vim-fugitive')
   call dein#add('twitvim/twitvim')
@@ -37,11 +39,6 @@ call dein#begin(expand('~/.vim/dein'))
   " version依存 #vim7.4.16以上
   if v:version > 740
     call dein#add('fatih/vim-go')
-  endif
-  " Darwin用プラグイン
-  if system('uname') == "Darwin\n"
-    call dein#add('ryanoasis/vim-devicons')
-    call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
   endif
 call dein#end()
 
