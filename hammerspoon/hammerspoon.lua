@@ -4,8 +4,7 @@
 --     ** window management **
 -- -------------------------------------
 
-local mash = {"shift", "alt", "cmd"}
-local mash_app = {"shift", "alt"}
+local mash = {"alt", "cmd"}
 
 hs.hotkey.bind(mash, "L", function()
   local win = hs.window.focusedWindow()
@@ -75,6 +74,22 @@ end)
 -- -------------------------------------
 --     ** application management **
 -- -------------------------------------
+
+local mash_itunes = {"alt", "I"}
+
+hs.hotkey.bind(mash_itunes, "P", function()
+  if hs.itunes.isPlaying()
+    then
+      hs.itunes.pause()
+    else
+      hs.itunes.play()
+  end
+end)
+
+hs.hotkey.bind(mash_itunes, "[", hs.itunes.previous)
+hs.hotkey.bind(mash_itunes, "]", hs.itunes.next)
+hs.hotkey.bind(mash_itunes, "=", hs.itunes.volumeUp)
+hs.hotkey.bind(mash_itunes, "-", hs.itunes.volumeDown)
 
 -- -------------------------------------
 --        ** debug management **
