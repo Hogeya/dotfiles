@@ -32,15 +32,7 @@ set-window-option -g mode-keys vi
 set-window-option -g monitor-activity off
 
 # クリップボードにコピーさせる
-if-shell "uname | grep -q CYGWIN" "source-file ~/dotfiles/tmux/_cygwin_tmux_conf"
 if-shell "uname | grep -q Darwin" "source-file ~/dotfiles/tmux/_darwin_tmux_conf"
-
-# TODO Darwinで検証
-# set-option -g default-command "reattach-to-user-namespace -l zsh"
-# bind-key -T copy-mode-vi v send-keys -X begin-selection
-# bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-# bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
-# bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
 # ステータスバーの設定
 set-option -g status-fg colour255
@@ -69,7 +61,7 @@ set-option -g message-attr bright
 # ステータスバー
 set-option -g status-left-length 90
 set-option -g status-right-length 90
-set-option -g status-left "#[fg=white] TMUX "
+set-option -g status-left "#[fg=red] TMUX "
 set-option -g status-right "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P  #(wifi) #(battery -t) #[fg=white][%Y-%m-%d %H:%M]"
 set-option -g status-interval 1
 set-option -g status-justify left
