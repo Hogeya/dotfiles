@@ -28,6 +28,9 @@ set-option -g default-terminal "screen-256color"
 # カーソル移動のキーマッピングをvimにする
 set-window-option -g mode-keys vi
 
+# ウィンドウで動作があった場合でもステータスラインをハイライトしない
+set-window-option -g monitor-activity off
+
 # クリップボードにコピーさせる
 if-shell "uname | grep -q CYGWIN" "source-file ~/dotfiles/tmux/_cygwin_tmux_conf"
 if-shell "uname | grep -q Darwin" "source-file ~/dotfiles/tmux/_darwin_tmux_conf"
@@ -70,7 +73,6 @@ set-option -g status-left "#[fg=white] TMUX "
 set-option -g status-right "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P  #(wifi) #(battery -t) #[fg=white][%Y-%m-%d %H:%M]"
 set-option -g status-interval 1
 set-option -g status-justify left
-set-window-option -g monitor-activity on
 set-option -g visual-activity on
 set-option -g status-position top
 
