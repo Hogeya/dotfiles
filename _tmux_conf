@@ -66,8 +66,8 @@ set-option -g message-attr bright
 # ステータスバー
 set-option -g status-left-length 90
 set-option -g status-right-length 90
-set-option -g status-left "#[fg=colour222] (--;) "
-set-option -g status-right "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P  #(wifi) #(battery --tmux) #[fg=white][%Y-%m-%d %H:%M]"
+set-option -g status-left "#[fg=white] TMUX "
+set-option -g status-right "#[fg=white]Session: #S #[fg=white]#I #[fg=white]#P  #(wifi) #(battery -t) #[fg=white][%Y-%m-%d %H:%M]"
 set-option -g status-interval 1
 set-option -g status-justify left
 set-window-option -g monitor-activity on
