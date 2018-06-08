@@ -161,15 +161,5 @@ alias scp='scp -F ~/.ssh/config'
 ########################################################
 #  shell script
 
-case ${OSTYPE} in
-  darwin*)
-    source ~/dotfiles/zsh/general_functions.sh
-    source ~/dotfiles/zsh/git_functions.sh
-    source ~/dotfiles/zsh/todoist_functions.sh
-    ;;
-  linux*)
-    source ~/dotfiles/zsh/general_functions.sh
-    source ~/dotfiles/zsh/git_functions.sh
-    source ~/dotfiles/zsh/todoist_functions.sh
-    ;;
-esac
+source ~/dotfiles/zsh/general_functions.sh
+source ~/dotfiles/zsh/git_functions.sh
