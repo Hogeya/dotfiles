@@ -2,7 +2,7 @@
 # 起動時処理
 #
 
-pokemonsay -p Snorlax Welcome Z.......zzzzzzzzz
+pokemonsay -p Snorlax Welcome Yoneya\'s Z.......zzzzzzzzz
 
 case ${OSTYPE} in
   darwin*)
