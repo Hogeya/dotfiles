@@ -90,6 +90,7 @@ hs.hotkey.bind(mash_itunes, "[", hs.itunes.previous)
 hs.hotkey.bind(mash_itunes, "]", hs.itunes.next)
 hs.hotkey.bind(mash_itunes, "=", hs.itunes.volumeUp)
 hs.hotkey.bind(mash_itunes, "-", hs.itunes.volumeDown)
+hs.hotkey.bind(mash_itunes, "O", hs.itunes.displayCurrentTrack)
 
 -- -------------------------------------
 --        ** debug management **
