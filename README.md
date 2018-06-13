@@ -2,9 +2,8 @@
 Manage dotfiles Repository
 
 # Environment
-- OS
+- Support OS
   - OSX
-  - Wondows10
   - Ubuntu 16.04
 
 - Install
@@ -13,6 +12,7 @@ Manage dotfiles Repository
   - git 2.15.1
   - go 1.9.2
   - peco 0.5.1
+  - pokemonsay
   - reattach-to-user-namespace 2.6
   - silver searcher 2.1.0
   - tmux 2.6

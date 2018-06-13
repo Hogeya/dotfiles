@@ -21,3 +21,4 @@ runtime! plugin/_11_vim_nerdtree_syntax_highlight.vim
 runtime! plugin/_12_vim_devicon.vim
 runtime! plugin/_13_quickrun.vim
 runtime! plugin/_14_neocomplete.vim
+runtime! plugin/_15_previm.vim
