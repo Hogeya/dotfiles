@@ -13,6 +13,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
   autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} call CmdDefault() | set filetype=markdown
+  autocmd BufNewFile,BufRead *.{pu,uml} call CmdDefault() | set filetype=plantuml
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
   autocmd BufNewFile,BufRead *.sh call CmdDefault() | set filetype=sh
