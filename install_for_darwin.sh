@@ -14,7 +14,7 @@ brew install reattach-to-user-namespace
 brew install tmux
 brew install tree
 brew install zsh
-brew isntall the_shilver_searcher
+brew install the_shilver_searcher
 
 echo Start make vim libraly
 
