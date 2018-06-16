@@ -68,7 +68,6 @@ ln -sf $HOME/dotfiles/git/_gitconfig .gitconfig
 ln -sf $HOME/dotfiles/_tmux_conf .tmux.conf
 ln -sf $HOME/dotfiles/peco/config.json .peco/config.json
 ln -sf $HOME/dotfiles/_vimrc .vimrc
-ln -sf $HOME/dotfiles/_zprofile .zprofile
 ln -sf $HOME/dotfiles/_zshrc .zshrc
 cp ~/dotfiles/_zshenv ~/.zshenv
 cp ~/dotfiles/_netrc ~/.netrc
