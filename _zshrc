@@ -146,7 +146,7 @@ setopt share_history
 
 case ${OSTYPE} in
   darwin*)
-    alias ll='ls -la --color'
+    alias ll='ls -laG'
     ;;
   cygwin*)
     alias ll='ls --color=auto -l'
