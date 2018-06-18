@@ -81,8 +81,10 @@ hs.hotkey.bind(mash_itunes, "P", function()
   if hs.itunes.isPlaying()
     then
       hs.itunes.pause()
+      hs.alert.show('iTunes Paused')
     else
       hs.itunes.play()
+      hs.itunes.displayCurrentTrack()
   end
 end)
 
