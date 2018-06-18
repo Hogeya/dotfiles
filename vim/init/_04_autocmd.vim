@@ -9,7 +9,8 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.coffee call CmdDefault() | set filetype=coffee
   autocmd BufNewFile,BufRead *.ejs call CmdDefault() | set filetype=ejs
   autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
-  autocmd BufNewFile,BufRead *.html call CmdDefault | set filetype=html
+  autocmd BufNewFile,BufRead *.html call CmdDefault() | set filetype=html
+  autocmd BufNewFile,BufRead *.java call CmdDefault() | set filetype=java
   autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
   autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} call CmdDefault() | set filetype=markdown
@@ -25,21 +26,16 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.blade.php call CmdDefault() | set filetype=blade
 
   " dotfiles
-  autocmd BufNewFile,BufRead .env call CmdDefault() | set filetype=sh
-  autocmd BufNewFile,BufRead .env.* call CmdDefault() | set filetype=sh
+  autocmd BufNewFile,BufRead .{env,env.*} call CmdDefault() | set filetype=sh
   autocmd BufNewFile,BufRead .gitconfig call CmdDefault() | set filetype=gitconfig
   autocmd BufNewFile,BufRead .tmux.conf call CmdDefault() | set filetype=tmux
   autocmd BufNewFile,BufRead .vimrc call CmdDefault() | set filetype=vim
-  autocmd BufNewFile,BufRead .zshenv call CmdDefault() | set filetype=zsh
-  autocmd BufNewFile,BufRead .zshrc call CmdDefault() | set filetype=zsh
+  autocmd BufNewFile,BufRead {.zsh*,_z*} call CmdDefault() | set filetype=zsh
 
   " For my Dotfiles repository
-  autocmd BufNewFile,BufRead _gitconfig call CmdDefault() | set filetype=gitconfig
-  autocmd BufNewFile,BufRead _gitconfig_privacy call CmdDefault() | set filetype=gitconfig
+  autocmd BufNewFile,BufRead _gitconfig* call CmdDefault() | set filetype=gitconfig
   autocmd BufNewFile,BufRead _tmux_conf call CmdDefault() | set filetype=tmux
   autocmd BufNewFile,BufRead _vimrc call CmdDefault() | set filetype=vim
-  autocmd BufNewFile,BufRead _zprofile call CmdDefault() | set filetype=zsh
-  autocmd BufNewFile,BufRead _zshrc call CmdDefault() | set filetype=zsh
 
   " others
   autocmd BufNewFile,BufRead crontab call CmdDefault() | set filetype=crontab
