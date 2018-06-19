@@ -22,3 +22,4 @@ runtime! plugin/_12_vim_devicon.vim
 runtime! plugin/_13_quickrun.vim
 runtime! plugin/_14_neocomplete.vim
 runtime! plugin/_15_previm.vim
+runtime! plugin/_16_emmet_vim.vim
