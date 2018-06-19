@@ -5,6 +5,7 @@ if system('uname') != "Darwin\n"
   colorscheme molokai "TODO なぜかcygwinだとmolokaiを挟まないとhybridが効かない
 endif
 colorscheme hybrid "カラースキーマを有効
+let g:hybrid_custom_term_colors = 1
 
 set autoindent   " 改行時に前の行のインデントを計測
 set autoread     " 自動的にファイルを読み直す
