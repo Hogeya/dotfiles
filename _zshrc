@@ -84,7 +84,7 @@ left_down_prompt_preexec() {
 }
 add-zsh-hook preexec left_down_prompt_preexec
 
-function zle-line-init zle-keymap-select zle-line-finish
+function zle-line-init zle-keymap-select
 {
   case $KEYMAP in
     vicmd)
@@ -112,8 +112,7 @@ PROMPTGIT="${COLOR_BG_GRAY}  ${vcs_info_msg_0_}  ${COLOR_END}"
 PROMPT="
 ${PROMPTTIME}${PROMPTUSER}${PROMPTDIR}${PROMPTGIT}
 %{$terminfo_down_sc$VIMODE$terminfo[rc]%}▸ "
-TRAPALRM ()  {zle reset-prompt}
-TMOUT=30
+zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-line-finish
