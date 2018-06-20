@@ -80,11 +80,11 @@ local mash_itunes = {"alt", "I"}
 hs.hotkey.bind(mash_itunes, "P", function()
   if hs.itunes.isPlaying()
     then
+      hs.notify.show(hs.itunes.getCurrentAlbum(), hs.itunes.getCurrentArtist(), hs.itunes.getCurrentTrack())
       hs.itunes.pause()
-      hs.alert.show('iTunes Paused')
     else
       hs.itunes.play()
-      hs.itunes.displayCurrentTrack()
+      hs.notify.show(hs.itunes.getCurrentAlbum(), hs.itunes.getCurrentArtist(), hs.itunes.getCurrentTrack())
   end
 end)
 
@@ -97,8 +97,6 @@ hs.hotkey.bind(mash_itunes, "O", hs.itunes.displayCurrentTrack)
 -- -------------------------------------
 --        ** debug management **
 -- -------------------------------------
-
-
 
 function reloadConfig(files)
   local doReload = false
@@ -117,4 +115,4 @@ hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.hotkey.bind(mash, "R", function()
   hs.reload()
 end)
-hs.alert.show("Config loaded")
+hs.notify.show("Hammerspoon", "Notify", "Config loaded")
