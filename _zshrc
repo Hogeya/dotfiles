@@ -98,9 +98,20 @@ function zle-line-init zle-keymap-select zle-line-finish
       ;;
   esac
 
-PROMPT=$'
-%{\e[30;48;5;73m%}%{\e[38;5;15m%} %n (%~) %{\e[0m%}%{\e[30;48;5;236m%} ${vcs_info_msg_0_} %{\e[0m%}%{\e[30;48;5;236m%}%{\e[38;5;15m%}[%*] %{\e[0m%}
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%}$ '
+COLOR_BG_BLUE=$'%{\e[30;48;5;38m%}'
+COLOR_BG_GRAY=$'%{\e[30;48;5;236m%}'
+COLOR_BG_GOLD=$'%{\e[30;48;5;214m%}'
+COLOR_FG_WHITE=$'%{\e[38;5;15m%}'
+COLOR_FG_BLACK=$'%{\e[38;5;232m%}'
+COLOR_END=$'%{\e[0m%}'
+PROMPTTIME="${COLOR_BG_GRAY}${COLOR_FG_WHITE}  %*  ${COLOR_END}"
+PROMPTUSER="${COLOR_BG_BLUE}${COLOR_FG_BLACK}  %n  ${COLOR_END}"
+PROMPTDIR="${COLOR_BG_GOLD}${COLOR_FG_BLACK}  %~  ${COLOR_END}"
+PROMPTGIT="${COLOR_BG_GRAY}  ${vcs_info_msg_0_}  ${COLOR_END}"
+
+PROMPT="
+${PROMPTTIME}${PROMPTUSER}${PROMPTDIR}${PROMPTGIT}
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%}▸ "
 TRAPALRM ()  {zle reset-prompt}
 TMOUT=30
 }
