@@ -12,6 +12,17 @@ function peco-git-add() {
 zle -N peco-git-add
 bindkey " ga" peco-git-add
 
+function peco-git-reset() {
+  local SELECTED_FILE_TO_ADD="$(git st --porcelain | peco --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
+  if [ -n "$SELECTED_FILE_TO_ADD" ]; then
+    BUFFER="git reset $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ') && git st"
+    CURSOR="$#BUFFER"
+  fi
+  zle accept-line
+}
+zle -N peco-git-reset
+bindkey " gr" peco-git-reset
+
 function peco-git-checkout() {
   local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | sed -e "s/remotes\/origin\///g" | peco | sed -e "s/\* //g")"
   if [ -n "$SELECTED_BRANCH" ]; then
