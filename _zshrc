@@ -51,6 +51,7 @@ zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$D
 zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+zstyle ':completion:*' group-name ''
 
 # プロンプト
 TERM=xterm-256color
@@ -72,6 +73,9 @@ source ~/.zshenv
 autoload -Uz vcs_info
 
 # PROMPT変数内で変数を参照する
+setopt prompt_subst
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
 # プロンプト表示直前にvcs_info呼び出し
@@ -113,13 +117,13 @@ COLOR_FG_WHITE=$'%{\e[38;5;15m%}'
 COLOR_FG_BLACK=$'%{\e[38;5;232m%}'
 COLOR_END=$'%{\e[0m%}'
 PROMPTTIME="${COLOR_BG_GRAY}${COLOR_FG_WHITE}  %*  ${COLOR_END}"
-PROMPTUSER="${COLOR_BG_BLUE}${COLOR_FG_BLACK}  %n  ${COLOR_END}"
-PROMPTDIR="${COLOR_BG_GOLD}${COLOR_FG_BLACK}  %~  ${COLOR_END}"
+PROMPTUSER="${COLOR_FG_WHITE} %n ${COLOR_END}"
+PROMPTDIR="${COLOR_BG_BLUE}${COLOR_FG_BLACK}  %~  ${COLOR_END}"
 PROMPTGIT="${COLOR_BG_GRAY}  ${vcs_info_msg_0_}  ${COLOR_END}"
 
 PROMPT="
-${PROMPTTIME}${PROMPTUSER}${PROMPTDIR}${PROMPTGIT}
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%}▸ "
+${PROMPTTIME}${PROMPTDIR}${PROMPTGIT}
+%{$terminfo_down_sc$VIMODE$terminfo[rc]%}${PROMPTUSER}▸ "
 zle reset-prompt
 }
 zle -N zle-line-init
