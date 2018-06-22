@@ -15,6 +15,7 @@ brew install tmux
 brew install tree
 brew install zsh
 brew install the_shilver_searcher
+ln -s /usr/loca/bin/gtac /usr/local/bin/tac
 
 echo Start make vim libraly
 
