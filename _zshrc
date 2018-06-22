@@ -14,7 +14,7 @@ case ${OSTYPE} in
 esac
 
 #########################################################
-# plugins
+# beginning plugins
 
 source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
@@ -174,3 +174,7 @@ alias scp='scp -F ~/.ssh/config'
 
 source ~/dotfiles/zsh/general_functions.sh
 source ~/dotfiles/zsh/git_functions.sh
+
+########################################################
+#  ending pulgins
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
