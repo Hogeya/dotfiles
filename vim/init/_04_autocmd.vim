@@ -11,16 +11,18 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
   autocmd BufNewFile,BufRead *.html call CmdDefault() | set filetype=html
   autocmd BufNewFile,BufRead *.java call CmdDefault() | set filetype=java
+  autocmd BufNewFile,BufRead *.js call CmdDefault() | set filetype=javascript
+  autocmd BufNewFile,BufRead *.json call CmdDefault() | set filetype=json
   autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
   autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
-  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} call CmdDefault() | set filetype=markdown
-  autocmd BufNewFile,BufRead *.{pu,uml} call CmdDefault() | set filetype=plantuml
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
   autocmd BufNewFile,BufRead *.sh call CmdDefault() | set filetype=sh
   autocmd BufNewFile,BufRead *.vim call CmdDefault() | set filetype=vim
   autocmd BufNewFile,BufRead *.vue call CmdDefault() | set filetype=vue
   autocmd BufNewFile,BufRead *.zsh call CmdDefault() | set filetype=zsh
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} call CmdDefault() | set filetype=markdown
+  autocmd BufNewFile,BufRead *.{pu,uml} call CmdDefault() | set filetype=plantuml
 
   " blade file
   autocmd BufNewFile,BufRead *.blade.php call CmdDefault() | set filetype=blade
