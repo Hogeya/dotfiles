@@ -6,6 +6,7 @@
 augroup vimrc_loading
   autocmd!
   autocmd Bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd BufNewFile,BufRead *.c call CmdDefault() | set filetype=c
   autocmd BufNewFile,BufRead *.coffee call CmdDefault() | set filetype=coffee
   autocmd BufNewFile,BufRead *.ejs call CmdDefault() | set filetype=ejs
   autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
