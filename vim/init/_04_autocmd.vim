@@ -18,6 +18,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
+  autocmd BufNewFile,BufRead *.sql call CmdDefault() | set filetype=sql
   autocmd BufNewFile,BufRead *.sh call CmdDefault() | set filetype=sh
   autocmd BufNewFile,BufRead *.vim call CmdDefault() | set filetype=vim
   autocmd BufNewFile,BufRead *.vue call CmdDefault() | set filetype=vue
@@ -37,7 +38,7 @@ augroup vimrc_loading
 
   " For my Dotfiles repository
   autocmd BufNewFile,BufRead _gitconfig* call CmdDefault() | set filetype=gitconfig
-  autocmd BufNewFile,BufRead _tmux_conf call CmdDefault() | set filetype=tmux
+  autocmd BufNewFile,BufRead *_tmux_conf call CmdDefault() | set filetype=tmux
   autocmd BufNewFile,BufRead _vimrc call CmdDefault() | set filetype=vim
 
   " others
