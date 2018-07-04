@@ -82,16 +82,16 @@ bind k resize-pane -U 5
 bind l resize-pane -R 5
 
 # window切り替えキーバインド
-unbind ]
-unbind [
-bind ] next-window
-bind [ previous-window
+unbind o
+unbind p
+bind o next-window
+bind p previous-window
 
 # セッション切り替えキーバインド
-unbind p
-unbind o
-bind p switch-client -n
-bind o switch-client -p
+# unbind p
+# unbind o
+# bind p switch-client -n
+# bind o switch-client -p
 
 # kill-window
 unbind k
