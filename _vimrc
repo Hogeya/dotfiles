@@ -9,7 +9,6 @@ runtime! init/_04_autocmd.vim
 
 runtime! plugin/_01_lightline.vim
 runtime! plugin/_02_nerdtree.vim
-runtime! plugin/_03_neocomplcache.vim
 runtime! plugin/_04_vim_gitgutter.vim
 runtime! plugin/_05_twitvim.vim
 runtime! plugin/_06_unite_vim.vim
