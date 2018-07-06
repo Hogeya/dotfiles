@@ -84,8 +84,8 @@ bind l resize-pane -R 5
 # window切り替えキーバインド
 unbind o
 unbind p
-bind o next-window
-bind p previous-window
+bind p next-window
+bind o previous-window
 
 # セッション切り替えキーバインド
 # unbind p
