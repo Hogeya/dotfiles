@@ -44,6 +44,6 @@ call dein#begin(expand('~/.vim/dein'))
   endif
 call dein#end()
 
-if dein#check_install()
+if has('vim_starting') && dein#check_install()
   call dein#install()
 endif

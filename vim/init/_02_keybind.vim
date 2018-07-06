@@ -16,10 +16,10 @@ nnoremap j gj
 nnoremap k gk
 
 " 水平分割
-nnoremap ss :split<CR>
+nnoremap ss :split\<CR>
 
 " 垂直分割
-nnoremap vs :vsplit<CR>
+nnoremap vs :vsplit\<CR>
 
 " 幅増減
 nnoremap s> <Leader>w>
@@ -30,16 +30,16 @@ nnoremap s+ <Leader>w+
 nnoremap s- <Leader>w-
 
 " 新規タブ
-nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>t :tabnew\<CR>
 
 " 英字キーボードに合わせてコロンとセミコロンを入れ替える
 noremap ; :
 
 " reload
-nnoremap .r :<C-u>source $HOME/.vimrc<CR>
+nnoremap .r :<C-u>source $HOME/.vimrc\<CR>
 
 " highlight解除キー
-nnoremap <Leader>h :noh<CR>
+nnoremap <Leader>h :noh\<CR>
 
 " 1行ヤンク
 nnoremap Y y$
@@ -49,16 +49,16 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 
 " cursorlineとcursorcolumnのon/off
-nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
+nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!\<CR>
 
 " Ctrl-wのキーバインド設定
 nnoremap <Leader>w <C-w>
 
-" copymode用のfunction <Leader>r で元に戻せる
-nnoremap <Leader>v :call Copymode()<CR>
+  " copymode用のfunction <Leader>r で元に戻せる
+nnoremap <Leader>v :call Copymode()\<CR>
 
 " Splash
-nnoremap <Leader>s :Splash $HOME/dotfiles/src/vim_intro.txt<CR>
+nnoremap <Leader>s :Splash $HOME/dotfiles/src/vim_intro.txt\<CR>
 
 function! Copymode()
   set nonumber
