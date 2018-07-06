@@ -9,18 +9,25 @@ brew update
 brew install coreutils
 brew install cowsay
 brew install go
+brew install nodebrew
 brew install peco
 brew install reattach-to-user-namespace
 brew install terminal-notifier
+brew install the_shilver_searcher
 brew install tmux
 brew install tree
 brew install zsh
-brew install the_shilver_searcher
 ln -s /usr/loca/bin/gtac /usr/local/bin/tac
 
-echo Start make vim libraly
-
 home=$HOME
+echo Start preparing node
+cd $HOME
+mkdir ./.nodebrew
+mkdir ./.nodebrew/src
+nodebrew install-binary latest
+echo DONE!
+
+echo Start make vim libraly
 # .vimディレクトリをカレントに作成
 cd $HOME
 mkdir .vim

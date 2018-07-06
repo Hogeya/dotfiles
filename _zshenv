@@ -1,4 +1,5 @@
 path=(
   /usr/local/bin/(N-/)
+  ~/.nodebrew/current/bin/(N-/)
   $path
 )
