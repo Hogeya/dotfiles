@@ -11,6 +11,7 @@ brew install cowsay
 brew install go
 brew install peco
 brew install reattach-to-user-namespace
+brew install terminal-notifier
 brew install tmux
 brew install tree
 brew install zsh

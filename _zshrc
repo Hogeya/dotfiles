@@ -181,6 +181,7 @@ case ${OSTYPE} in
 esac
 alias ssh='ssh -F ~/.ssh/config'
 alias scp='scp -F ~/.ssh/config'
+alias noti='terminal-notifier -message "finished command process"'
 
 ########################################################
 #  shell script
