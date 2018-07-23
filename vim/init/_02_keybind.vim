@@ -60,6 +60,9 @@ nnoremap <Leader>v :call Copymode()<CR>
 " Splash
 nnoremap <Leader>s :Splash $HOME/dotfiles/src/vim_intro.txt<CR>
 
+" snake to camel
+nnoremap <Leader>[ :s/_\(.\)/\u\1/g<CR>
+
 function! Copymode()
   set nonumber
   set listchars=
