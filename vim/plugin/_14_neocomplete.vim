@@ -13,8 +13,9 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'php' : $HOME.'/dotfiles/src/php.dict'
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
