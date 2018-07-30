@@ -46,8 +46,8 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead Makefile call CmdDefault() | set filetype=make
 
   " add templete
-  autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php_signature.txt
-  autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python_signature.txt
+  autocmd BufNewFile *.php 0r $HOME/dotfiles/src/php/php_signature.txt
+  autocmd BufNewFile *.py 0r $HOME/dotfiles/src/python/python_signature.txt
 augroup END
 
 function! CmdDefault()

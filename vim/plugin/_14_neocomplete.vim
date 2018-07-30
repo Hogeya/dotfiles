@@ -14,7 +14,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions',
-    \ 'php' : $HOME.'/dotfiles/src/php.dict'
+    \ 'php' : $HOME.'/dotfiles/src/php/php.dict'
     \ }
 
 let g:neocomplete#delimiter_patterns = {
