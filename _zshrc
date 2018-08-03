@@ -163,6 +163,14 @@ setopt print_eight_bit
 # zsh間で履歴共有
 setopt share_history
 
+function command_not_found_handler(){
+  if [ -e /usr/local/bin/pokemonsay ];then
+    pokemonsay 'Oh, fuck the bloody command not found!!' -p Slowpoke
+  fi
+  return 127
+}
+
+
 ########################################################
 #  ALIAS
 
