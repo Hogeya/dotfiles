@@ -41,6 +41,7 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('twitvim/twitvim')
   call dein#add('tyru/open-browser.vim')
   call dein#add('ujihisa/unite-colorscheme')
+  call dein#add('vim-scripts/PDV--phpDocumentor-for-vim')
   " version依存 #vim7.4.16以上
   if v:version > 740
     call dein#add('fatih/vim-go')
