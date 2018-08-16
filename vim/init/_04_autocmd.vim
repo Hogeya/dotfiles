@@ -20,6 +20,7 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
   autocmd BufNewFile,BufRead *.sql call CmdDefault() | set filetype=sql
   autocmd BufNewFile,BufRead *.sh call CmdDefault() | set filetype=sh
+  autocmd BufNewFile,BufRead *.ts call CmdDefault() | set filetype=typescript
   autocmd BufNewFile,BufRead *.vim call CmdDefault() | set filetype=vim
   autocmd BufNewFile,BufRead *.vue call CmdDefault() | set filetype=vue
   autocmd BufNewFile,BufRead *.zsh call CmdDefault() | set filetype=zsh
