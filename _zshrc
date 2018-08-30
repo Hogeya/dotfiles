@@ -18,6 +18,8 @@ esac
 
 source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+bindkey '^w' autosuggest-accept
 
 ########################################################
 # BASE SETTING
