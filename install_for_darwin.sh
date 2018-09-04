@@ -52,9 +52,7 @@ echo DONE!!
 # zsh library
 echo Start make zsh library
 cd ~/.zsh/
-git clone "$Github/b4b4r07/zsh-vimode-visual"
-git clone "$Github/zsh-users/zsh-syntax-highlighting"
-git clone "$Github/zsh-users/zsh-autosuggestions"
+git clone "$Github/zplug/zplug"
 echo DONE!!
 
 echo Start make tmux library

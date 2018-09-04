@@ -16,10 +16,20 @@ esac
 #########################################################
 # beginning plugins
 
-source ~/.zsh/zsh-vimode-visual/zsh-vimode-visual.zsh
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-bindkey '^w' autosuggest-accept
+# zplug "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.zplug/init.zsh
+
+if ! zplug check --verbose; then
+  printf "install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug "b4b4r07/zsh-vimode-visual"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug load --verbose
 
 ########################################################
 # BASE SETTING
@@ -201,7 +211,3 @@ alias noti='terminal-notifier -message "finished command process"'
 
 source ~/dotfiles/zsh/general_functions.sh
 source ~/dotfiles/zsh/git_functions.sh
-
-########################################################
-#  ending pulgins
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
