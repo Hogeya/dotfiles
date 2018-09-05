@@ -4,7 +4,7 @@ syntax on "シンタックスハイライトを有効
 if system('uname') != "Darwin\n"
   colorscheme molokai "TODO なぜかcygwin, centosだとmolokaiを挟まないとhybridが効かない
 endif
-colorscheme hybrid "カラースキーマを有効
+colorscheme iceberg "カラースキーマを有効
 let g:hybrid_custom_term_colors = 1
 
 set autoindent   " 改行時に前の行のインデントを計測

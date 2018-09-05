@@ -33,7 +33,7 @@ let g:lightline = {
       \ 'separator': { 'left': "\ue0b0" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
-  
+
 """"""""""""""""""
 " lightline functions
 "
