@@ -42,12 +42,16 @@ Github="https://github.com"
 cd ~/.vim/colors
 git clone "$Github/tomasr/molokai"
 git clone "$Github/w0ng/vim-hybrid"
+git clone "$Github/cocopon/iceberg.vim"
 mv molokai/colors/molokai.vim molokai.vim
 mv vim-hybrid/colors/hybrid.vim hybrid.vim
+mv iceberg.vim iceberg
+mv iceberg/colors/iceberg.vim ./
 cd ~/.vim/dein
 git clone "$Github/Shougo/dein.vim"
 rm -rf molokai
 rm -rf vim-hybrid
+rm -rf iceberg
 echo DONE!!
 
 # zsh library
