@@ -27,6 +27,7 @@ echo DONE!!
 echo Start make zsh library
 cd ~/.zsh/
 git clone "$Github/zplug/zplug" ~/.zplug
+npm install -global pure-prompt
 echo DONE!!
 
 echo Start make tmux library

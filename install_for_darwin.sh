@@ -18,6 +18,7 @@ brew install tmux
 brew install tree
 brew install zsh
 ln -s /usr/loca/bin/gtac /usr/local/bin/tac
+npm install -global pure-prompt
 
 home=$HOME
 echo Start preparing node

@@ -28,6 +28,8 @@ fi
 
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/zsh-vimode-visual"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug load --verbose
@@ -84,70 +86,74 @@ source ~/.zshenv
 ########################################################
 # PROMPT SETTING
 
-# VCS情報の表示を有効
-autoload -Uz vcs_info
+## VCS情報の表示を有効
+#autoload -Uz vcs_info
+#
+## PROMPT変数内で変数を参照する
+#setopt prompt_subst
+#
+## プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+#setopt prompt_subst
+#
+## プロンプト表示直前にvcs_info呼び出し
+#precmd() { vcs_info }
+#zstyle ':vcs_info:git:*' check-for-changes true
+#zstyle ':vcs_info:git:*' stagedstr $'%{\e[38;5;226m%}!'
+#zstyle ':vcs_info:git:*' unstagedstr $'%{\e[38;5;196m%}+'
+#zstyle ':vcs_info:*' formats $'%{\e[38;5;51m%}%c%u[%b]%f'
+#zstyle ':vcs_info:*' actionformats '[%b|%a]'
+#
+## vimodeの表示設定
+#autoload -Uz terminfo
+#
+## 表示位置を入力下部に
+#terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
+#left_down_prompt_preexec() {
+#    print -rn -- $terminfo[el]
+#}
+#add-zsh-hook preexec left_down_prompt_preexec
+#
+#function zle-line-init zle-keymap-select
+#{
+#  case $KEYMAP in
+#    vicmd)
+#      VIMODE=$'%{\e[38;5;14m%}-- NORMAL --%{\e[m%}'
+#      ;;
+#    main|viins)
+#      VIMODE=$'%{\e[38;5;76m%}-- INSERT --%{\e[m%}'
+#      ;;
+#    vivis|vivli)
+#      VIMODE=$'%{\e[38;5;208m%}-- VISUAL --%{\e[m%}'
+#      ;;
+#  esac
+#
+#COLOR_BG_BLUE=$'%{\e[30;48;5;38m%}'
+#COLOR_BG_GRAY=$'%{\e[30;48;5;236m%}'
+#COLOR_BG_GOLD=$'%{\e[30;48;5;214m%}'
+#COLOR_FG_WHITE=$'%{\e[38;5;15m%}'
+#COLOR_FG_BLUE=$'%{\e[38;5;38m%}'
+#COLOR_FG_BLACK=$'%{\e[38;5;232m%}'
+#COLOR_FG_GOLD=$'%{\e[38;5;214m%}'
+#COLOR_END=$'%{\e[0m%}'
+#PROMPTTIME="${COLOR_BG_GRAY}${COLOR_FG_WHITE}  %*  ${COLOR_END}"
+#PROMPTHOST="${COLOR_BG_GRAY}${COLOR_FG_GOLD} %n@${HOST} ${COLOR_END}"
+#PROMPTOS="${COLOR_BG_GRAY}${COLOR_FG_GOLD} $(uname) ${COLOR_END}"
+#PROMPTUSER="${COLOR_FG_WHITE} %n ${COLOR_END}"
+#PROMPTDIR="${COLOR_BG_GRAY}${COLOR_FG_BLUE}  %~  ${COLOR_END}"
+#PROMPTGIT="${COLOR_BG_GRAY}  ${vcs_info_msg_0_}  ${COLOR_END}"
+#
+#PROMPT="
+#${PROMPTHOST}${PROMPTDIR}${PROMPTGIT}
+#%{$terminfo_down_sc$VIMODE$terminfo[rc]%}▸ "
+#zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
+#zle -N edit-command-line
 
-# PROMPT変数内で変数を参照する
-setopt prompt_subst
-
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
-setopt prompt_subst
-
-# プロンプト表示直前にvcs_info呼び出し
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr $'%{\e[38;5;226m%}!'
-zstyle ':vcs_info:git:*' unstagedstr $'%{\e[38;5;196m%}+'
-zstyle ':vcs_info:*' formats $'%{\e[38;5;51m%}%c%u[%b]%f'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-
-# vimodeの表示設定
-autoload -Uz terminfo
-
-# 表示位置を入力下部に
-terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
-left_down_prompt_preexec() {
-    print -rn -- $terminfo[el]
-}
-add-zsh-hook preexec left_down_prompt_preexec
-
-function zle-line-init zle-keymap-select
-{
-  case $KEYMAP in
-    vicmd)
-      VIMODE=$'%{\e[38;5;14m%}-- NORMAL --%{\e[m%}'
-      ;;
-    main|viins)
-      VIMODE=$'%{\e[38;5;76m%}-- INSERT --%{\e[m%}'
-      ;;
-    vivis|vivli)
-      VIMODE=$'%{\e[38;5;208m%}-- VISUAL --%{\e[m%}'
-      ;;
-  esac
-
-COLOR_BG_BLUE=$'%{\e[30;48;5;38m%}'
-COLOR_BG_GRAY=$'%{\e[30;48;5;236m%}'
-COLOR_BG_GOLD=$'%{\e[30;48;5;214m%}'
-COLOR_FG_WHITE=$'%{\e[38;5;15m%}'
-COLOR_FG_BLUE=$'%{\e[38;5;38m%}'
-COLOR_FG_BLACK=$'%{\e[38;5;232m%}'
-COLOR_FG_GOLD=$'%{\e[38;5;214m%}'
-COLOR_END=$'%{\e[0m%}'
-PROMPTTIME="${COLOR_BG_GRAY}${COLOR_FG_WHITE}  %*  ${COLOR_END}"
-PROMPTHOST="${COLOR_BG_GRAY}${COLOR_FG_GOLD} %n@${HOST} ${COLOR_END}"
-PROMPTOS="${COLOR_BG_GRAY}${COLOR_FG_GOLD} $(uname) ${COLOR_END}"
-PROMPTUSER="${COLOR_FG_WHITE} %n ${COLOR_END}"
-PROMPTDIR="${COLOR_BG_GRAY}${COLOR_FG_BLUE}  %~  ${COLOR_END}"
-PROMPTGIT="${COLOR_BG_GRAY}  ${vcs_info_msg_0_}  ${COLOR_END}"
-
-PROMPT="
-${PROMPTHOST}${PROMPTDIR}${PROMPTGIT}
-%{$terminfo_down_sc$VIMODE$terminfo[rc]%}▸ "
-zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-zle -N edit-command-line
+# pureを使用する
+autoload -U promptinit; promptinit
+prompt pure
 
 #########################################################
 # OPTIONS
@@ -214,3 +220,5 @@ alias noti='terminal-notifier -message "finished command process"'
 
 source ~/dotfiles/zsh/general_functions.sh
 source ~/dotfiles/zsh/git_functions.sh
+
+
