@@ -20,6 +20,7 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('aklt/plantuml-syntax')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cocopon/pgmnt.vim')
+  call dein#add('fatih/vim-go')
   call dein#add('groenewege/vim-less')
   call dein#add('itchyny/lightline.vim')
   call dein#add('jistr/vim-nerdtree-tabs')
@@ -43,11 +44,6 @@ call dein#begin(expand('~/.vim/dein'))
   call dein#add('twitvim/twitvim')
   call dein#add('tyru/open-browser.vim')
   call dein#add('ujihisa/unite-colorscheme')
-  call dein#add('vim-scripts/PDV--phpDocumentor-for-vim')
-  " version依存 #vim7.4.16以上
-  if v:version > 740
-    call dein#add('fatih/vim-go')
-  endif
 call dein#end()
 
 if has('vim_starting') && dein#check_install()
