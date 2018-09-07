@@ -8,6 +8,7 @@
 brew update
 brew install coreutils
 brew install cowsay
+brew install fzf
 brew install go
 brew install nodebrew
 brew install peco

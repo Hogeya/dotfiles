@@ -1,46 +1,46 @@
 ##############################################
 # git functions
 #
-function peco-git-add() {
-  local SELECTED_FILE_TO_ADD="$(git st --porcelain | peco --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
+function fzf-git-add() {
+  local SELECTED_FILE_TO_ADD="$(git st --porcelain | fzf --multi --reverse --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
   if [ -n "$SELECTED_FILE_TO_ADD" ]; then
     BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ') && git st"
     CURSOR="$#BUFFER"
   fi
   zle accept-line
 }
-zle -N peco-git-add
-bindkey " ga" peco-git-add
+zle -N fzf-git-add
+bindkey " ga" fzf-git-add
 
-function peco-git-reset() {
-  local SELECTED_FILE_TO_ADD="$(git st --porcelain | peco --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
+function fzf-git-reset() {
+  local SELECTED_FILE_TO_ADD="$(git st --porcelain | fzf --multi --reverse --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
   if [ -n "$SELECTED_FILE_TO_ADD" ]; then
     BUFFER="git reset $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ') && git st"
     CURSOR="$#BUFFER"
   fi
   zle accept-line
 }
-zle -N peco-git-reset
-bindkey " gr" peco-git-reset
+zle -N fzf-git-reset
+bindkey " gr" fzf-git-reset
 
-function peco-git-checkout() {
-  local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | sed -e "s/remotes\/origin\///g" | peco | sed -e "s/\* //g")"
+function fzf-git-checkout() {
+  local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | sed -e "s/remotes\/origin\///g" | fzf --reverse | sed -e "s/\* //g")"
   if [ -n "$SELECTED_BRANCH" ]; then
     BUFFER="git co $(echo "$SELECTED_BRANCH" | tr '\n' ' ') && git st"
     CURSOR="$#BUFFER"
   fi
   zle accept-line
 }
-zle -N peco-git-checkout
-bindkey " gc" peco-git-checkout
+zle -N fzf-git-checkout
+bindkey " gc" fzf-git-checkout
 
-function peco-git-branch-d() {
-  local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | peco | sed -e "s/\* //g")"
+function fzf-git-branch-d() {
+  local SELECTED_BRANCH="$(git br -a | cut -b 3- | grep -v -- "->" | fzf --multi  --reverse | sed -e "s/\* //g")"
   if [ -n "$SELECTED_BRANCH" ]; then
     BUFFER="git br -D $(echo "$SELECTED_BRANCH" | tr '\n' ' ')"
     CURSOR="$#BUFFER"
   fi
   zle accept-line
 }
-zle -N peco-git-branch-d
-bindkey " gd" peco-git-branch-d
+zle -N fzf-git-branch-d
+bindkey " gd" fzf-git-branch-d
