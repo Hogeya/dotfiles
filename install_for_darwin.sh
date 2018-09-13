@@ -10,7 +10,7 @@ brew install coreutils
 brew install cowsay
 brew install fzf
 brew install go
-brew install nodebrew
+brew install node
 brew install peco
 brew install reattach-to-user-namespace
 brew install terminal-notifier
