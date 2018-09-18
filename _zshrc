@@ -13,6 +13,7 @@ case ${OSTYPE} in
     ;;
 esac
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #########################################################
 # beginning plugins
 
@@ -224,3 +225,5 @@ source ~/dotfiles/zsh/general_functions.sh
 source ~/dotfiles/zsh/git_functions.sh
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
