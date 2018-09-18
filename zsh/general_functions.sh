@@ -2,7 +2,7 @@
 # general functions
 #
 function fzf-select-history() {
-  local SELECTED_HISTORY="$(\history -n 1 | tac | fzf --multi --reverse)"
+  local SELECTED_HISTORY="$(\history -n 1 | tac | fzf --multi )"
   if [ -n "$SELECTED_HISTORY" ]; then
     BUFFER="$SELECTED_HISTORY"
     CURSOR=$#BUFFER
@@ -14,7 +14,7 @@ zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
 function fzf-select-ls() {
-  local SELECTED_FILE=$(tree --charset=o -f | fzf --multi --reverse | tr -d '\||`|-' | xargs echo)
+  local SELECTED_FILE=$(tree --charset=o -f | fzf --multi | tr -d '\||`|-' | xargs echo)
   if [ -n "$SELECTED_FILE" ]; then
     if [ -n "$LBUFFER" ]; then
       local new_left="${LBUFFER%\ } $SELECTED_FILE"
