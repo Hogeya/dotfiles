@@ -10,12 +10,14 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.coffee call CmdDefault() | set filetype=coffee
   autocmd BufNewFile,BufRead *.ejs call CmdDefault() | set filetype=ejs
   autocmd BufNewFile,BufRead *.go call CmdDefault() | set filetype=go
+  autocmd BufNewFile,BufRead *.h call CmdDefault() | set filetype=objc
   autocmd BufNewFile,BufRead *.html call CmdDefault() | set filetype=html
   autocmd BufNewFile,BufRead *.java call CmdDefault() | set filetype=java
   autocmd BufNewFile,BufRead *.js call CmdDefault() | set filetype=javascript
   autocmd BufNewFile,BufRead *.json call CmdDefault() | set filetype=json
   autocmd BufNewFile,BufRead *.less call CmdDefault() | set filetype=less
   autocmd BufNewFile,BufRead *.lua call CmdDefault() | set filetype=lua
+  autocmd BufNewFile,BufRead *.m call CmdDefault() | set filetype=objc
   autocmd BufNewFile,BufRead *.php call Cmdphp()
   autocmd BufNewFile,BufRead *.py call CmdDefault() | set filetype=python
   autocmd BufNewFile,BufRead *.sql call CmdDefault() | set filetype=sql
