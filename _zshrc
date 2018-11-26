@@ -17,7 +17,6 @@ esac
 #########################################################
 # beginning plugins
 
-# zplug "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zplug/init.zsh
 
 if ! zplug check --verbose; then
@@ -223,7 +222,5 @@ alias noti='terminal-notifier -message "finished command process"'
 
 source ~/dotfiles/zsh/general_functions.sh
 source ~/dotfiles/zsh/git_functions.sh
-
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

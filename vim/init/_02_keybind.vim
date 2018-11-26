@@ -63,6 +63,13 @@ nnoremap <Leader>s :Splash $HOME/dotfiles/src/vim_intro.txt<CR>
 " snake to camel
 nnoremap <Leader>[ :s/_\(.\)/\u\1/g<CR>
 
+inoremap { {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap < <><Left>
+inoremap <<Enter> <><Left><CR><ESC><S-o>
+
 function! Copymode()
   set nonumber
   set listchars=
