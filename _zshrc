@@ -38,6 +38,8 @@ zplug load --verbose
 
 export ENHANCD_FILTER="/usr/local/bin/peco"
 
+bindkey '^p' autosuggest-accept
+
 ########################################################
 # BASE SETTING
 
