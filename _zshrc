@@ -38,8 +38,6 @@ zplug load --verbose
 
 export ENHANCD_FILTER="/usr/local/bin/peco"
 
-bindkey '^P' autosuggest-accept
-
 ########################################################
 # BASE SETTING
 
@@ -203,6 +201,7 @@ function command_not_found_handler(){
   return 127
 }
 
+bindkey '^P' autosuggest-accept
 
 ########################################################
 #  ALIAS
