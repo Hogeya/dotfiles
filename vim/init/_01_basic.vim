@@ -66,3 +66,5 @@ set updatetime=250
 set whichwrap=h,l,b,s,[,],<,>,~
 " コマンドラインモードでのファイル名補完有効設定
 set wildmenu wildmode=list:longest
+
+set termguicolors
