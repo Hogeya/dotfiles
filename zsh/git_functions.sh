@@ -2,7 +2,7 @@
 # git functions
 #
 function fzf-git-add() {
-  local SELECTED_FILE_TO_ADD="$(git st --porcelain | fzf --multi --query "$LBUFFER" | awk -F ' ' '{print $NF}' )"
+  local SELECTED_FILE_TO_ADD="$(git st --porcelain | fzf --multi --query "$LBUFFER" --preview "echo {} | cut -c4- | xargs git diff --color=always HEAD" | awk -F ' ' '{print $NF}' )"
   if [ -n "$SELECTED_FILE_TO_ADD" ]; then
     BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ') && git st"
     CURSOR="$#BUFFER"
@@ -44,3 +44,14 @@ function fzf-git-branch-d() {
 }
 zle -N fzf-git-branch-d
 bindkey " gd" fzf-git-branch-d
+
+function fzf-git-status() {
+  local SELECTED_FILE="$(git st --porcelain | fzf --preview "echo {} | cut -c4- | xargs git diff --color=always HEAD" --multi --query "$BUFFER" | awk -F ' ' '{print $NF}' )"
+  if [ -n "$SELECTED_FILE"  ]; then
+    BUFFER="git st $(echo "$SELECTED_FILE" | tr '\n' ' ')"
+    CURSOR="$#BUFFER"
+  fi
+  zle accept-line
+}
+zle -N fzf-git-status
+bindkey " gs" fzf-git-status
