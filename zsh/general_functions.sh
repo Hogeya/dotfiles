@@ -13,18 +13,18 @@ function fzf-select-history() {
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
-function fzf-select-ls() {
-  local SELECTED_FILE=$(tree --charset=o -f | fzf --multi | tr -d '\||`|-' | xargs echo)
-  if [ -n "$SELECTED_FILE" ]; then
-    if [ -n "$LBUFFER" ]; then
-      local new_left="${LBUFFER%\ } $SELECTED_FILE"
-    else
-      local new_left="$SELECTED_FILE"
-    fi
-    BUFFER="${new_left}${RBUFFER}"
-    CURSOR="${#new_left}"
-  fi
-  zle accept-line
-}
-zle -N fzf-select-ls
-bindkey "^l" fzf-select-ls
+#function fzf-select-ls() {
+#  local SELECTED_FILE=$(tree --charset=o -f | fzf --multi | tr -d '\||`|-' | xargs echo)
+#  if [ -n "$SELECTED_FILE" ]; then
+#    if [ -n "$LBUFFER" ]; then
+#      local new_left="${LBUFFER%\ } $SELECTED_FILE"
+#    else
+#      local new_left="$SELECTED_FILE"
+#    fi
+#    BUFFER="${new_left}${RBUFFER}"
+#    CURSOR="${#new_left}"
+#  fi
+#  zle accept-line
+#}
+#zle -N fzf-select-ls
+#bindkey "l" fzf-select-ls
