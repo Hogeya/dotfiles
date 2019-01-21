@@ -3,4 +3,4 @@
 """"""""""""""""
 " vim-splashの設定
 "
-let g:splash#path="~/dotfiles/src/vim_intro.txt"
+let g:splash#path="/Users/t-yoneya/dotfiles/src/vim_intro.txt"
