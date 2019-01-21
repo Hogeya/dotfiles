@@ -1,9 +1,6 @@
 # author: Takatsugu Yoneya
 # 2018-6-6
 
-# Homebrew install
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 # install modules
 brew update
 brew install coreutils
@@ -18,7 +15,7 @@ brew install the_shilver_searcher
 brew install tmux
 brew install tree
 brew install zsh
-ln -s /usr/loca/bin/gtac /usr/local/bin/tac
+ln -sf /usr/loca/bin/gtac /usr/local/bin/tac
 npm install -global pure-prompt
 
 home=$HOME
@@ -59,6 +56,7 @@ echo DONE!!
 echo Start make zsh library
 cd ~/.zsh/
 git clone "$Github/zplug/zplug"
+mv ~/.zsh/zplug ~/.zplug
 echo DONE!!
 
 echo Start make tmux library
