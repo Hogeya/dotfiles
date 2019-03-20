@@ -29,9 +29,6 @@ augroup vimrc_loading
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} call CmdDefault() | set filetype=markdown
   autocmd BufNewFile,BufRead *.{pu,uml} call CmdDefault() | set filetype=plantuml
 
-  " blade file
-  autocmd BufNewFile,BufRead *.blade.php call CmdDefault() | set filetype=blade
-
   " dotfiles
   autocmd BufNewFile,BufRead .{env,env.*} call CmdDefault() | set filetype=sh
   autocmd BufNewFile,BufRead .gitconfig call CmdDefault() | set filetype=gitconfig
