@@ -18,6 +18,7 @@ esac
 # beginning plugins
 
 source ~/.zplug/init.zsh
+source ~/.phpbrew/bashrc
 
 if ! zplug check --verbose; then
   printf "install? [y/N]: "
